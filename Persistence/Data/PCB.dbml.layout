@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PCB">
+  <DataContextMoniker Name="/PCBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e6cb0340-4353-4312-aa11-7afed30e572b" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/PCBDataContext/Gender" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ceb41e5-d854-4c1c-bb5a-a82f077e25f3" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="740c7e0c-079c-4c32-9dd0-2ec9332a60cc" absoluteBounds="0.75, 2.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/PCBDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="298851ea-529f-472c-b22b-2474c9794007" absoluteBounds="0.765, 3.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb6ed423-b172-4794-9776-01d2585756da" absoluteBounds="3.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/PCBDataContext/MarriageStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb83b5db-e417-47c8-9561-67f0defbdf82" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c2dd5074-a295-4ec4-ab70-8ad034aaf85b" absoluteBounds="3.75, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/PCBDataContext/Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a798f263-8ead-445e-b1ae-f36a0fae1f7e" absoluteBounds="3.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
