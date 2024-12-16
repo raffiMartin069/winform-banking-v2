@@ -19,15 +19,15 @@ namespace Martinez_Bank
 		static void Main()
 		{
 
-			var services = new ServiceCollection();
-			services.Services();
-			var serviceProvider = services.BuildServiceProvider();
+			//var services = new ServiceCollection();
+			//services.Services();
+			//var serviceProvider = services.BuildServiceProvider();
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			//Application.Run(new SignInForm());
 			//Application.Run(new CreateAccountForm());
-			Application.Run(serviceProvider.GetRequiredService<AdminMDIParent>());
+			Application.Run(new AdminMDIParent());
 		}
 	}
 }

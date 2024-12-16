@@ -28,6 +28,11 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -66,9 +71,10 @@
 			this.SaveButton = new System.Windows.Forms.Button();
 			this.ClearAllFieldButton = new System.Windows.Forms.Button();
 			this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+			this.ProfileImagePictureBox = new System.Windows.Forms.PictureBox();
 			this.label11 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.NewAccountGridView = new System.Windows.Forms.DataGridView();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
 			this.label5 = new System.Windows.Forms.Label();
@@ -81,7 +87,8 @@
 			this.tableLayoutPanel9.SuspendLayout();
 			this.tableLayoutPanel4.SuspendLayout();
 			this.flowLayoutPanel3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.ProfileImagePictureBox)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.NewAccountGridView)).BeginInit();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.flowLayoutPanel4.SuspendLayout();
 			this.SuspendLayout();
@@ -377,7 +384,7 @@
 			// 
 			this.MaritalStatusComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.MaritalStatusComboBox.FormattingEnabled = true;
-			this.MaritalStatusComboBox.Location = new System.Drawing.Point(3, 34);
+			this.MaritalStatusComboBox.Location = new System.Drawing.Point(3, 30);
 			this.MaritalStatusComboBox.Margin = new System.Windows.Forms.Padding(0);
 			this.MaritalStatusComboBox.Name = "MaritalStatusComboBox";
 			this.MaritalStatusComboBox.Size = new System.Drawing.Size(236, 29);
@@ -388,7 +395,7 @@
 			this.GenderComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.GenderComboBox.DisplayMember = "Type";
 			this.GenderComboBox.FormattingEnabled = true;
-			this.GenderComboBox.Location = new System.Drawing.Point(241, 34);
+			this.GenderComboBox.Location = new System.Drawing.Point(241, 30);
 			this.GenderComboBox.Margin = new System.Windows.Forms.Padding(0);
 			this.GenderComboBox.Name = "GenderComboBox";
 			this.GenderComboBox.Size = new System.Drawing.Size(243, 29);
@@ -565,6 +572,7 @@
 			this.SaveButton.TabIndex = 15;
 			this.SaveButton.Text = "Save";
 			this.SaveButton.UseVisualStyleBackColor = false;
+			this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
 			// 
 			// ClearAllFieldButton
 			// 
@@ -579,23 +587,39 @@
 			this.ClearAllFieldButton.TabIndex = 16;
 			this.ClearAllFieldButton.Text = "Clear";
 			this.ClearAllFieldButton.UseVisualStyleBackColor = false;
+			this.ClearAllFieldButton.Click += new System.EventHandler(this.ClearAllFieldButton_Click);
 			// 
 			// flowLayoutPanel3
 			// 
 			this.flowLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.flowLayoutPanel3.Controls.Add(this.ProfileImagePictureBox);
 			this.flowLayoutPanel3.Controls.Add(this.label11);
 			this.flowLayoutPanel3.Controls.Add(this.textBox1);
-			this.flowLayoutPanel3.Controls.Add(this.dataGridView1);
+			this.flowLayoutPanel3.Controls.Add(this.NewAccountGridView);
 			this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-			this.flowLayoutPanel3.Location = new System.Drawing.Point(630, 24);
+			this.flowLayoutPanel3.Location = new System.Drawing.Point(630, 3);
 			this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-			this.flowLayoutPanel3.Size = new System.Drawing.Size(612, 661);
+			this.flowLayoutPanel3.Size = new System.Drawing.Size(612, 704);
 			this.flowLayoutPanel3.TabIndex = 1;
+			// 
+			// ProfileImagePictureBox
+			// 
+			this.ProfileImagePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.ProfileImagePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.ProfileImagePictureBox.ErrorImage = global::Martinez_Bank.Properties.Resources._default;
+			this.ProfileImagePictureBox.InitialImage = global::Martinez_Bank.Properties.Resources._default;
+			this.ProfileImagePictureBox.Location = new System.Drawing.Point(232, 3);
+			this.ProfileImagePictureBox.MinimumSize = new System.Drawing.Size(150, 150);
+			this.ProfileImagePictureBox.Name = "ProfileImagePictureBox";
+			this.ProfileImagePictureBox.Size = new System.Drawing.Size(150, 150);
+			this.ProfileImagePictureBox.TabIndex = 18;
+			this.ProfileImagePictureBox.TabStop = false;
+			this.ProfileImagePictureBox.Click += new System.EventHandler(this.ProfileImagePictureBox_Click);
 			// 
 			// label11
 			// 
 			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(3, 0);
+			this.label11.Location = new System.Drawing.Point(3, 156);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(57, 21);
 			this.label11.TabIndex = 3;
@@ -603,19 +627,59 @@
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(3, 24);
+			this.textBox1.Location = new System.Drawing.Point(3, 180);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(216, 29);
 			this.textBox1.TabIndex = 17;
 			// 
-			// dataGridView1
+			// NewAccountGridView
 			// 
-			this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(3, 59);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(605, 587);
-			this.dataGridView1.TabIndex = 2;
+			this.NewAccountGridView.AllowUserToAddRows = false;
+			this.NewAccountGridView.AllowUserToDeleteRows = false;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.NewAccountGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			this.NewAccountGridView.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.NewAccountGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+			this.NewAccountGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+			this.NewAccountGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.NewAccountGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.NewAccountGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			this.NewAccountGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.NewAccountGridView.DefaultCellStyle = dataGridViewCellStyle3;
+			this.NewAccountGridView.Location = new System.Drawing.Point(3, 215);
+			this.NewAccountGridView.Name = "NewAccountGridView";
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.NewAccountGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
+			this.NewAccountGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+			this.NewAccountGridView.Size = new System.Drawing.Size(609, 463);
+			this.NewAccountGridView.TabIndex = 2;
 			// 
 			// tableLayoutPanel1
 			// 
@@ -699,7 +763,8 @@
 			this.tableLayoutPanel4.ResumeLayout(false);
 			this.flowLayoutPanel3.ResumeLayout(false);
 			this.flowLayoutPanel3.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.ProfileImagePictureBox)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.NewAccountGridView)).EndInit();
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.flowLayoutPanel4.ResumeLayout(false);
 			this.flowLayoutPanel4.PerformLayout();
@@ -748,10 +813,11 @@
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView NewAccountGridView;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.PictureBox ProfileImagePictureBox;
 	}
 }

@@ -63,6 +63,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\ServiceInjection.cs" />
+    <Compile Include="Dto\AccountDto.cs" />
+    <Compile Include="Dto\CreateAccountDto.cs" />
+    <Compile Include="Model\CreateAccountModel.cs" />
+    <Compile Include="Persistence\Data\PCB.cs">
+      <DependentUpon>PCB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Admin\CreateAccountRepository.cs" />
     <Compile Include="Repository\Common\CommonRepository.cs" />
     <Compile Include="Persistence\Data\PCB.designer.cs">
       <AutoGen>True</AutoGen>
@@ -75,6 +82,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\CommonIteratorUtility.cs" />
+    <Compile Include="Utilities\ImageUtility.cs" />
     <Compile Include="View\Admin\CreateAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,7 +168,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="Presenter\" />
     <Folder Include="View\Client\" />
   </ItemGroup>
@@ -172,6 +179,7 @@
     <None Include="resources\icons\icons8-account-48.png" />
     <Content Include="Persistence\scripts\scripts.sql" />
     <Content Include="resources\images\computerized.png" />
+    <None Include="resources\images\default.png" />
     <Content Include="resources\images\e-statement.png" />
     <Content Include="resources\images\interest-2.png" />
     <Content Include="resources\images\interest.png" />

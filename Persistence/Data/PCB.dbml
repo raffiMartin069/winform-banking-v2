@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PCB" Class="PCBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=PCB;Integrated Security=True;Pooling=False;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="Martinez_Bank.Properties.Settings" SettingsPropertyName="PCBConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=PCB;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="Martinez_Bank.Properties.Settings" SettingsPropertyName="PCBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Gender" Member="Genders">
     <Type Name="Gender">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -21,6 +21,7 @@
       <Column Name="Fathername" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Mothername" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Balance" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileImage" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.MarriageStatus" Member="MarriageStatus">
@@ -35,6 +36,18 @@
       <Column Name="RoleType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Function Name="dbo.SP_GetAllRole" Method="SP_GetAllRole">
+    <ElementType Name="SP_GetAllRoleResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoleType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_GetAllGender" Method="SP_GetAllGender">
+    <ElementType Name="SP_GetAllGenderResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.SP_GetAllMarriageStatus" Method="SP_GetAllMarriageStatus">
     <ElementType Name="SP_GetAllMarriageStatusResult">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -45,7 +58,8 @@
     <Parameter Name="Fullname" Parameter="fullname" Type="System.String" DbType="VarChar(255)" />
     <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(255)" />
     <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(255)" />
-    <Parameter Name="Role" Parameter="role" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="RepeatPassword" Parameter="repeatPassword" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Role" Parameter="role" Type="System.String" DbType="VarChar(255)" />
     <Parameter Name="MarriageStatus" Parameter="marriageStatus" Type="System.String" DbType="VarChar(255)" />
     <Parameter Name="DateOfBirth" Parameter="dateOfBirth" Type="System.DateTime" DbType="Date" />
     <Parameter Name="PhoneNumber" Parameter="phoneNumber" Type="System.String" DbType="Char(11)" />
@@ -54,20 +68,27 @@
     <Parameter Name="Fathername" Parameter="fathername" Type="System.String" DbType="VarChar(255)" />
     <Parameter Name="Mothername" Parameter="mothername" Type="System.String" DbType="VarChar(255)" />
     <Parameter Name="Balance" Parameter="balance" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="ProfileImage" Parameter="profileImage" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
     <ElementType Name="SP_AddAccountResult">
-      <Column Name="Result" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MESSAGE" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_GetAllGender" Method="SP_GetAllGender">
-    <ElementType Name="SP_GetAllGenderResult">
+  <Function Name="dbo.SP_GetAllNewAccount" Method="SP_GetAllNewAccount">
+    <ElementType Name="SP_GetAllNewAccountResult">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.SP_GetAllRole" Method="SP_GetAllRole">
-    <ElementType Name="SP_GetAllRoleResult">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="RoleType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fullname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="MarriageStatus" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="Char(11) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Fathername" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Mothername" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileImage" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

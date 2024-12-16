@@ -19,7 +19,7 @@ namespace Martinez_Bank.Repository.Common
 		public IEnumerable<SP_GetAllGenderResult> GetAllGender()
 		{
 			return _context.SP_GetAllGender();
-		}
+		}	
 
 		public IEnumerable<SP_GetAllMarriageStatusResult> GetAllMarriageStatus()
 		{

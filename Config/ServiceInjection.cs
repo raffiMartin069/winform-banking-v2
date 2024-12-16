@@ -1,4 +1,6 @@
-﻿using Martinez_Bank.Persistence.Data;
+﻿using Martinez_Bank.Model;
+using Martinez_Bank.Persistence.Data;
+using Martinez_Bank.Repository.Admin;
 using Martinez_Bank.Repository.Common;
 using Martinez_Bank.View.Admin;
 using Martinez_Bank.View.Mdi;

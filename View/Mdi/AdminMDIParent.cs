@@ -1,4 +1,7 @@
-﻿using Martinez_Bank.View.Admin;
+﻿using Martinez_Bank.Persistence.Data;
+using Martinez_Bank.Repository.Admin;
+using Martinez_Bank.Repository.Common;
+using Martinez_Bank.View.Admin;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -14,13 +17,9 @@ namespace Martinez_Bank.View.Mdi
 {
 	public partial class AdminMDIParent : Form
 	{
-
-		private readonly IServiceProvider _serviceProvider;
-
-		public AdminMDIParent(IServiceProvider serviceProvider)
+		public AdminMDIParent()
 		{
 			InitializeComponent();
-			_serviceProvider = serviceProvider;
 		}
 
 		private void ShowNewForm(Form form)
@@ -31,7 +30,10 @@ namespace Martinez_Bank.View.Mdi
 
 		private void CreateAccountButton_Click(object sender, MouseEventArgs e)
 		{
-			var createAccount = _serviceProvider.GetRequiredService<CreateAccountForm>();
+			var context = new PCBDataContext();
+			var createAccount = new CreateAccountForm
+				(new CommonRepository(context),
+				new CreateAccountRepository(context));
 			ShowNewForm(createAccount);
 		}
 

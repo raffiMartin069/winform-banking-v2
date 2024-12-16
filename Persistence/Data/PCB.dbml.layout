@@ -2,28 +2,28 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PCB">
   <DataContextMoniker Name="/PCBDataContext" />
   <nestedChildShapes>
-    <classShape Id="e6cb0340-4353-4312-aa11-7afed30e572b" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
+    <classShape Id="78908954-bc8b-4eef-a8e1-13b271a216d6" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
       <DataClassMoniker Name="/PCBDataContext/Gender" />
       <nestedChildShapes>
-        <elementListCompartment Id="3ceb41e5-d854-4c1c-bb5a-a82f077e25f3" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a15cacb9-9d1c-4422-8d9c-39e01e113c15" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="740c7e0c-079c-4c32-9dd0-2ec9332a60cc" absoluteBounds="0.75, 2.75, 2, 3.3093082682291666">
+    <classShape Id="16af9b7a-1842-43d9-8845-d501ddd68d39" absoluteBounds="0.75, 2.75, 2, 3.5016097005208326">
       <DataClassMoniker Name="/PCBDataContext/User" />
       <nestedChildShapes>
-        <elementListCompartment Id="298851ea-529f-472c-b22b-2474c9794007" absoluteBounds="0.765, 3.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c28e4cf5-a11a-4f46-8e0f-06f9e9c06ef1" absoluteBounds="0.765, 3.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cb6ed423-b172-4794-9776-01d2585756da" absoluteBounds="3.75, 0.75, 2, 1.1939925130208335">
+    <classShape Id="28c8ebcc-b7e6-43ec-9160-2a30b574c525" absoluteBounds="3.75, 0.75, 2, 1.1939925130208335">
       <DataClassMoniker Name="/PCBDataContext/MarriageStatus" />
       <nestedChildShapes>
-        <elementListCompartment Id="fb83b5db-e417-47c8-9561-67f0defbdf82" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f704f879-0c28-4652-b64a-f7919e5c8a93" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c2dd5074-a295-4ec4-ab70-8ad034aaf85b" absoluteBounds="3.75, 2.75, 2, 1.1939925130208335">
+    <classShape Id="b962650d-5e31-4f52-a5b9-bdb1298e17b8" absoluteBounds="3.75, 2.75, 2, 1.1939925130208335">
       <DataClassMoniker Name="/PCBDataContext/Role" />
       <nestedChildShapes>
-        <elementListCompartment Id="a798f263-8ead-445e-b1ae-f36a0fae1f7e" absoluteBounds="3.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f256c734-699a-4163-861c-17adc27a7671" absoluteBounds="3.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
