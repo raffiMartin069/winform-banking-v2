@@ -39,7 +39,9 @@ namespace Martinez_Bank.View.Mdi
 
 		private void UpdateAccountButton_Click(object sender, EventArgs e)
 		{
-			var update = new UpdateAccountForm();
+			var context = new PCBDataContext();
+			var repo = new CommonRepository(context);
+			var update = new UpdateAccountForm(repo);
 			ShowNewForm(update);
 		}
 

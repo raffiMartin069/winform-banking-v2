@@ -44,12 +44,8 @@ namespace Martinez_Bank.View.Admin
 			DisplayNewAccounts();
 		}
 
-		private void DisplayNewAccounts()
+		private void Headers()
 		{
-			var result = _repo.GetAll();
-
-			NewAccountGridView.DataSource = result?.ToList();
-
 			NewAccountGridView.Columns["Id"].HeaderText = "Identification Number";
 			NewAccountGridView.Columns["Email"].HeaderText = "Email";
 			NewAccountGridView.Columns["DateOfBirth"].HeaderText = "Date of birth";
@@ -62,6 +58,13 @@ namespace Martinez_Bank.View.Admin
 			NewAccountGridView.Columns["Role"].HeaderText = "Role";
 			NewAccountGridView.Columns["Balance"].HeaderText = "Current Balance";
 			NewAccountGridView.Columns["ProfileImage"].HeaderText = "Profile Image";
+		}
+
+		private void DisplayNewAccounts()
+		{
+			var result = _repo.GetAll();
+			NewAccountGridView.DataSource = result?.ToList();
+			Headers();
 		}
 
 		private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -150,6 +153,14 @@ namespace Martinez_Bank.View.Admin
 			{
 				MessageBox.Show($"{ex.Message}");
 			}
+		}
+
+		private void SearchTextBox_TextChanged(object sender, EventArgs e)
+		{
+			var key = SearchTextBox.Text;
+			var result = _repo.FindByKey(key);
+			NewAccountGridView.DataSource = result?.ToList();
+			Headers();
 		}
 	}
 }

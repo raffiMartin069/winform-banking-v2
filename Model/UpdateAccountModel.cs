@@ -7,16 +7,18 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Martinez_Bank.Model
 {
-	public class CreateAccountModel
+	public class UpdateAccountModel
 	{
 		private readonly CommonRepository _repository;
 		private readonly CreateAccountRepository _accountRepo;
 
-		public CreateAccountModel
+		public UpdateAccountModel
 			(string email, string dateOfBirth, string password,
 			string repeatPassword, string fullname, string phonenumber,
 			string address, string marriageStatus, string gender,
@@ -40,6 +42,34 @@ namespace Martinez_Bank.Model
 			ProfileImage = profileImage;
 			_accountRepo = accountRepo;
 		}
+
+		public UpdateAccountModel
+			(string email, string dateOfBirth, string password,
+			string repeatPassword, string fullname, string phonenumber,
+			string address, string marriageStatus, string gender,
+			string mothername, string fathername, string role,
+			string balance, CommonRepository repository, Image profileImage, CreateAccountRepository accountRepo, int id)
+		{
+			Email = email;
+			DateOfBirth = dateOfBirth;
+			Password = password;
+			RepeatPassword = repeatPassword;
+			Fullname = fullname;
+			Phonenumber = phonenumber;
+			Address = address;
+			MarriageStatus = marriageStatus;
+			Gender = gender;
+			Mothername = mothername;
+			Fathername = fathername;
+			Role = role;
+			Balance = balance;
+			_repository = repository;
+			ProfileImage = profileImage;
+			_accountRepo = accountRepo;
+			Id = id;
+		}
+
+		public int Id { get; set; }
 		public string Email { get; set; }
 		public string DateOfBirth { get; set; }
 		public string Password { get; set; }
@@ -101,7 +131,7 @@ namespace Martinez_Bank.Model
 
 			if (imageBytes.Length < 1000)
 				throw new Exception("Profile image size must be atleast 1KB.");
-		
+
 			return imageBytes;
 		}
 
@@ -156,9 +186,9 @@ namespace Martinez_Bank.Model
 		{
 			var genders = _repository.GetAllGender();
 			bool isGenderValid = false;
-			foreach(var i in genders)
+			foreach (var i in genders)
 			{
-				if(Gender == i.Name)
+				if (Gender == i.Name)
 				{
 					isGenderValid = true;
 					break;
@@ -202,10 +232,10 @@ namespace Martinez_Bank.Model
 			if (!long.TryParse(Phonenumber, out long phoneNum))
 				throw new Exception("Invalid phone number format.");
 
-			if(!Phonenumber.StartsWith("09"))
+			if (!Phonenumber.StartsWith("09"))
 				throw new Exception("Phone number must start with 09.");
 
-			if(Phonenumber.Length != 11)
+			if (Phonenumber.Length != 11)
 				throw new Exception("Phone number must be 11 digits long."); // 09xx xxx xxxx for Philippines mobile number
 		}
 
@@ -247,7 +277,7 @@ namespace Martinez_Bank.Model
 			// check if user is atleast 7 years old
 			if (DateTime.Now.Year - dateOfBirth.Year < 7)
 				throw new Exception("Client must be atleast 7 years old to create an account.");
-		
+
 			return dateOfBirth.Date;
 		}
 

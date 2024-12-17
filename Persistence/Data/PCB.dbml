@@ -76,17 +76,34 @@
   <Function Name="dbo.SP_GetAllNewAccount" Method="SP_GetAllNewAccount">
     <ElementType Name="SP_GetAllNewAccountResult">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Fullname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Password" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Role" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="MarriageStatus" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Fullname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="PhoneNumber" Type="System.String" DbType="Char(11) NOT NULL" CanBeNull="false" />
       <Column Name="Address" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="MarriageStatus" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Gender" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Fathername" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Mothername" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Fathername" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileImage" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_FindUserByKey" Method="SP_FindUserByKey">
+    <Parameter Name="Key" Parameter="key" Type="System.String" DbType="VarChar(255)" />
+    <ElementType Name="SP_FindUserByKeyResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Fullname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="Char(11) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="MarriageStatus" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Mothername" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Fathername" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Balance" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="ProfileImage" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
     </ElementType>

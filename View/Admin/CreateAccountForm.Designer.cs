@@ -73,12 +73,13 @@
 			this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
 			this.ProfileImagePictureBox = new System.Windows.Forms.PictureBox();
 			this.label11 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.SearchTextBox = new System.Windows.Forms.TextBox();
 			this.NewAccountGridView = new System.Windows.Forms.DataGridView();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
+			this.ReportLinkLabel = new System.Windows.Forms.LinkLabel();
 			this.tableLayoutPanel2.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.flowLayoutPanel2.SuspendLayout();
@@ -384,7 +385,7 @@
 			// 
 			this.MaritalStatusComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.MaritalStatusComboBox.FormattingEnabled = true;
-			this.MaritalStatusComboBox.Location = new System.Drawing.Point(3, 30);
+			this.MaritalStatusComboBox.Location = new System.Drawing.Point(3, 34);
 			this.MaritalStatusComboBox.Margin = new System.Windows.Forms.Padding(0);
 			this.MaritalStatusComboBox.Name = "MaritalStatusComboBox";
 			this.MaritalStatusComboBox.Size = new System.Drawing.Size(236, 29);
@@ -395,7 +396,7 @@
 			this.GenderComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.GenderComboBox.DisplayMember = "Type";
 			this.GenderComboBox.FormattingEnabled = true;
-			this.GenderComboBox.Location = new System.Drawing.Point(241, 30);
+			this.GenderComboBox.Location = new System.Drawing.Point(241, 34);
 			this.GenderComboBox.Margin = new System.Windows.Forms.Padding(0);
 			this.GenderComboBox.Name = "GenderComboBox";
 			this.GenderComboBox.Size = new System.Drawing.Size(243, 29);
@@ -594,8 +595,9 @@
 			this.flowLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.flowLayoutPanel3.Controls.Add(this.ProfileImagePictureBox);
 			this.flowLayoutPanel3.Controls.Add(this.label11);
-			this.flowLayoutPanel3.Controls.Add(this.textBox1);
+			this.flowLayoutPanel3.Controls.Add(this.SearchTextBox);
 			this.flowLayoutPanel3.Controls.Add(this.NewAccountGridView);
+			this.flowLayoutPanel3.Controls.Add(this.ReportLinkLabel);
 			this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.flowLayoutPanel3.Location = new System.Drawing.Point(630, 3);
 			this.flowLayoutPanel3.Name = "flowLayoutPanel3";
@@ -625,12 +627,13 @@
 			this.label11.TabIndex = 3;
 			this.label11.Text = "Search";
 			// 
-			// textBox1
+			// SearchTextBox
 			// 
-			this.textBox1.Location = new System.Drawing.Point(3, 180);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(216, 29);
-			this.textBox1.TabIndex = 17;
+			this.SearchTextBox.Location = new System.Drawing.Point(3, 180);
+			this.SearchTextBox.Name = "SearchTextBox";
+			this.SearchTextBox.Size = new System.Drawing.Size(216, 29);
+			this.SearchTextBox.TabIndex = 17;
+			this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
 			// 
 			// NewAccountGridView
 			// 
@@ -678,7 +681,7 @@
 			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
 			this.NewAccountGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
-			this.NewAccountGridView.Size = new System.Drawing.Size(609, 463);
+			this.NewAccountGridView.Size = new System.Drawing.Size(609, 422);
 			this.NewAccountGridView.TabIndex = 2;
 			// 
 			// tableLayoutPanel1
@@ -733,6 +736,16 @@
 			this.label12.Size = new System.Drawing.Size(313, 25);
 			this.label12.TabIndex = 1;
 			this.label12.Text = "Invite someone now to get started!";
+			// 
+			// ReportLinkLabel
+			// 
+			this.ReportLinkLabel.AutoSize = true;
+			this.ReportLinkLabel.Location = new System.Drawing.Point(3, 640);
+			this.ReportLinkLabel.Name = "ReportLinkLabel";
+			this.ReportLinkLabel.Size = new System.Drawing.Size(124, 21);
+			this.ReportLinkLabel.TabIndex = 19;
+			this.ReportLinkLabel.TabStop = true;
+			this.ReportLinkLabel.Text = "Generate Report";
 			// 
 			// CreateAccountForm
 			// 
@@ -812,12 +825,13 @@
 		private System.Windows.Forms.Button ClearAllFieldButton;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox SearchTextBox;
 		private System.Windows.Forms.DataGridView NewAccountGridView;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.PictureBox ProfileImagePictureBox;
+		private System.Windows.Forms.LinkLabel ReportLinkLabel;
 	}
 }

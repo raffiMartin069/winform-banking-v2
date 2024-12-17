@@ -66,6 +66,7 @@
     <Compile Include="Dto\AccountDto.cs" />
     <Compile Include="Dto\CreateAccountDto.cs" />
     <Compile Include="Model\CreateAccountModel.cs" />
+    <Compile Include="Model\UpdateAccountModel.cs" />
     <Compile Include="Persistence\Data\PCB.cs">
       <DependentUpon>PCB.dbml</DependentUpon>
     </Compile>

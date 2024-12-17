@@ -16,6 +16,29 @@ namespace Martinez_Bank.Repository.Admin
 			_context = context;
 		}
 
+		public IEnumerable<AccountDto> FindByKey(string Key)
+		{
+			var result = from i in _context.SP_FindUserByKey(Key)
+						 select new AccountDto()
+						 {
+							 Id = i.Id,
+							 Email = i.Email,
+							 DateOfBirth = i.DateOfBirth,
+							 Fullname = i.Fullname,
+							 Phonenumber = i.PhoneNumber,
+							 Address = i.Address,
+							 MarriageStatus = i.MarriageStatus,
+							 Gender = i.Gender,
+							 Mothername = i.Mothername,
+							 Fathername = i.Fathername,
+							 Role = i.Role,
+							 Balance = i.Balance,
+							 ProfileImage = ImageUtility.ByteArrayToBitmap(i.ProfileImage.ToArray())
+						 };
+
+			return result;
+		}
+
 		public bool AddAccount(CreateAccountDto dto)
 		{
 			var result = _context.SP_AddAccount
@@ -49,6 +72,5 @@ namespace Martinez_Bank.Repository.Admin
 
 			return result;
 		} 
-
 	}
 }

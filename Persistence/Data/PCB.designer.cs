@@ -140,6 +140,13 @@ namespace Martinez_Bank.Persistence.Data
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<SP_GetAllNewAccountResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_FindUserByKey")]
+		public ISingleResult<SP_FindUserByKeyResult> SP_FindUserByKey([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Key", DbType="VarChar(255)")] string key)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), key);
+			return ((ISingleResult<SP_FindUserByKeyResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Gender")]
@@ -937,27 +944,25 @@ namespace Martinez_Bank.Persistence.Data
 		
 		private int _Id;
 		
-		private string _Fullname;
-		
 		private string _Email;
 		
-		private System.Data.Linq.Binary _Password;
-		
-		private string _Role;
-		
-		private string _MarriageStatus;
-		
 		private System.DateTime _DateOfBirth;
+		
+		private string _Fullname;
 		
 		private string _PhoneNumber;
 		
 		private string _Address;
 		
+		private string _MarriageStatus;
+		
 		private string _Gender;
+		
+		private string _Mothername;
 		
 		private string _Fathername;
 		
-		private string _Mothername;
+		private string _Role;
 		
 		private decimal _Balance;
 		
@@ -983,22 +988,6 @@ namespace Martinez_Bank.Persistence.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fullname", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-		public string Fullname
-		{
-			get
-			{
-				return this._Fullname;
-			}
-			set
-			{
-				if ((this._Fullname != value))
-				{
-					this._Fullname = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 		public string Email
 		{
@@ -1015,54 +1004,6 @@ namespace Martinez_Bank.Persistence.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarBinary(MAX) NOT NULL", CanBeNull=false)]
-		public System.Data.Linq.Binary Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this._Password = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-		public string Role
-		{
-			get
-			{
-				return this._Role;
-			}
-			set
-			{
-				if ((this._Role != value))
-				{
-					this._Role = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MarriageStatus", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-		public string MarriageStatus
-		{
-			get
-			{
-				return this._MarriageStatus;
-			}
-			set
-			{
-				if ((this._MarriageStatus != value))
-				{
-					this._MarriageStatus = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfBirth", DbType="Date NOT NULL")]
 		public System.DateTime DateOfBirth
 		{
@@ -1075,6 +1016,22 @@ namespace Martinez_Bank.Persistence.Data
 				if ((this._DateOfBirth != value))
 				{
 					this._DateOfBirth = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fullname", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string Fullname
+		{
+			get
+			{
+				return this._Fullname;
+			}
+			set
+			{
+				if ((this._Fullname != value))
+				{
+					this._Fullname = value;
 				}
 			}
 		}
@@ -1111,6 +1068,22 @@ namespace Martinez_Bank.Persistence.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MarriageStatus", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string MarriageStatus
+		{
+			get
+			{
+				return this._MarriageStatus;
+			}
+			set
+			{
+				if ((this._MarriageStatus != value))
+				{
+					this._MarriageStatus = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 		public string Gender
 		{
@@ -1123,6 +1096,22 @@ namespace Martinez_Bank.Persistence.Data
 				if ((this._Gender != value))
 				{
 					this._Gender = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mothername", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string Mothername
+		{
+			get
+			{
+				return this._Mothername;
+			}
+			set
+			{
+				if ((this._Mothername != value))
+				{
+					this._Mothername = value;
 				}
 			}
 		}
@@ -1143,6 +1132,216 @@ namespace Martinez_Bank.Persistence.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string Role
+		{
+			get
+			{
+				return this._Role;
+			}
+			set
+			{
+				if ((this._Role != value))
+				{
+					this._Role = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Balance
+		{
+			get
+			{
+				return this._Balance;
+			}
+			set
+			{
+				if ((this._Balance != value))
+				{
+					this._Balance = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProfileImage", DbType="VarBinary(MAX)")]
+		public System.Data.Linq.Binary ProfileImage
+		{
+			get
+			{
+				return this._ProfileImage;
+			}
+			set
+			{
+				if ((this._ProfileImage != value))
+				{
+					this._ProfileImage = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_FindUserByKeyResult
+	{
+		
+		private int _Id;
+		
+		private string _Email;
+		
+		private System.DateTime _DateOfBirth;
+		
+		private string _Fullname;
+		
+		private string _PhoneNumber;
+		
+		private string _Address;
+		
+		private string _MarriageStatus;
+		
+		private string _Gender;
+		
+		private string _Mothername;
+		
+		private string _Fathername;
+		
+		private string _Role;
+		
+		private decimal _Balance;
+		
+		private System.Data.Linq.Binary _ProfileImage;
+		
+		public SP_FindUserByKeyResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfBirth", DbType="Date NOT NULL")]
+		public System.DateTime DateOfBirth
+		{
+			get
+			{
+				return this._DateOfBirth;
+			}
+			set
+			{
+				if ((this._DateOfBirth != value))
+				{
+					this._DateOfBirth = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fullname", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string Fullname
+		{
+			get
+			{
+				return this._Fullname;
+			}
+			set
+			{
+				if ((this._Fullname != value))
+				{
+					this._Fullname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="Char(11) NOT NULL", CanBeNull=false)]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this._PhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this._Address = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MarriageStatus", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string MarriageStatus
+		{
+			get
+			{
+				return this._MarriageStatus;
+			}
+			set
+			{
+				if ((this._MarriageStatus != value))
+				{
+					this._MarriageStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+			set
+			{
+				if ((this._Gender != value))
+				{
+					this._Gender = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mothername", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 		public string Mothername
 		{
@@ -1155,6 +1354,38 @@ namespace Martinez_Bank.Persistence.Data
 				if ((this._Mothername != value))
 				{
 					this._Mothername = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fathername", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string Fathername
+		{
+			get
+			{
+				return this._Fathername;
+			}
+			set
+			{
+				if ((this._Fathername != value))
+				{
+					this._Fathername = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string Role
+		{
+			get
+			{
+				return this._Role;
+			}
+			set
+			{
+				if ((this._Role != value))
+				{
+					this._Role = value;
 				}
 			}
 		}
