@@ -16,39 +16,14 @@ namespace Martinez_Bank.Model
 	public class UpdateAccountModel
 	{
 		private readonly CommonRepository _repository;
-		private readonly CreateAccountRepository _accountRepo;
+		private readonly UpdateAccountRepository _accountRepo;
 
 		public UpdateAccountModel
 			(string email, string dateOfBirth, string password,
 			string repeatPassword, string fullname, string phonenumber,
 			string address, string marriageStatus, string gender,
 			string mothername, string fathername, string role,
-			string balance, CommonRepository repository, Image profileImage, CreateAccountRepository accountRepo)
-		{
-			Email = email;
-			DateOfBirth = dateOfBirth;
-			Password = password;
-			RepeatPassword = repeatPassword;
-			Fullname = fullname;
-			Phonenumber = phonenumber;
-			Address = address;
-			MarriageStatus = marriageStatus;
-			Gender = gender;
-			Mothername = mothername;
-			Fathername = fathername;
-			Role = role;
-			Balance = balance;
-			_repository = repository;
-			ProfileImage = profileImage;
-			_accountRepo = accountRepo;
-		}
-
-		public UpdateAccountModel
-			(string email, string dateOfBirth, string password,
-			string repeatPassword, string fullname, string phonenumber,
-			string address, string marriageStatus, string gender,
-			string mothername, string fathername, string role,
-			string balance, CommonRepository repository, Image profileImage, CreateAccountRepository accountRepo, int id)
+			string balance, CommonRepository repository, Image profileImage, UpdateAccountRepository accountRepo, int id)
 		{
 			Email = email;
 			DateOfBirth = dateOfBirth;
@@ -91,7 +66,7 @@ namespace Martinez_Bank.Model
 			return repo.GetAll();
 		}
 
-		public bool AddAccount()
+		public bool UpdateAccount()
 		{
 			string email = EmailValidator();
 			DateTime date = DateOfBirthValidator();
@@ -106,14 +81,14 @@ namespace Martinez_Bank.Model
 			decimal balance = BalanceValidator();
 			byte[] image = ValidateAndConvertProfileImage();
 
-			var dto = new CreateAccountDto
-				(email, date, Password,
+			var dto = new UpdateAccountDto
+				(Id, email, date, Password,
 				RepeatPassword, Fullname, Phonenumber,
 				Address, MarriageStatus, Gender,
 				Mothername, Fathername, Role,
 				balance, image);
 
-			return _accountRepo.AddAccount(dto);
+			return _accountRepo.Update(dto);
 		}
 
 		private byte[] ValidateAndConvertProfileImage()
@@ -142,14 +117,6 @@ namespace Martinez_Bank.Model
 
 			if (!decimal.TryParse(Balance, out decimal balance))
 				throw new Exception("Invalid balance format.");
-
-			// Mantaining balance or initial balance should be in hundreds or thousands.
-			// This ensures that there are no cents and the balance is a whole number for initial deposit.
-			if (balance % 100 != 0)
-				throw new Exception("Balance must be a in hundreds or thousands. E.g.\n\n* 100.00\n* 500.00\n* 1500.00");
-
-			if (balance < 100)
-				throw new Exception("Initial balance must be at least Php 100.00");
 
 			return balance;
 		}
@@ -248,10 +215,7 @@ namespace Martinez_Bank.Model
 		private void PasswordValidator()
 		{
 			if (string.IsNullOrEmpty(Password))
-				throw new Exception("Password can not be empty.");
-
-			if (string.IsNullOrEmpty(RepeatPassword))
-				throw new Exception("Repeat password can not be empty.");
+				return;
 
 			//if (Password.Length < 8)
 			//	throw new Exception("Password must be at least 8 characters long.");

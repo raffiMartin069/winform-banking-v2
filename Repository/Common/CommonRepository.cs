@@ -50,7 +50,8 @@ namespace Martinez_Bank.Repository.Common
 							 Fathername = i.Fathername,
 							 Role = i.Role,
 							 Balance = i.Balance,
-							 ProfileImage = ImageUtility.ByteArrayToBitmap(i.ProfileImage.ToArray())
+							 ProfileImage = ImageUtility.ByteArrayToBitmap(i.ProfileImage.ToArray()),
+							 OriginalSizeProfileImage = ImageUtility.ByteArrayToImage(i.ProfileImage.ToArray())
 						 };
 
 			return result;

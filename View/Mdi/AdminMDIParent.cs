@@ -41,13 +41,16 @@ namespace Martinez_Bank.View.Mdi
 		{
 			var context = new PCBDataContext();
 			var repo = new CommonRepository(context);
-			var update = new UpdateAccountForm(repo);
+			var updateRepo = new UpdateAccountRepository(context);
+			var update = new UpdateAccountForm(repo, updateRepo);
 			ShowNewForm(update);
 		}
 
 		private void Deposit_Click(object sender, EventArgs e)
 		{
-			var deposit = new DepositForm();
+			var context = new PCBDataContext();
+			var depositRepo = new DepositRepository(context);
+			var deposit = new DepositForm(depositRepo);
 			ShowNewForm(deposit);
 		}
 

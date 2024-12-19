@@ -42,6 +42,7 @@ namespace Martinez_Bank.View.Admin
 			MaritalStatusComboBox.Text = DEFAULT_MARITAL_STATUS;
 			RoleComboBox.Text = DEFAULT_ROLE;
 			DisplayNewAccounts();
+			ImageUtility.DefaultImage(ProfileImagePictureBox);
 		}
 
 		private void Headers()
@@ -58,6 +59,7 @@ namespace Martinez_Bank.View.Admin
 			NewAccountGridView.Columns["Role"].HeaderText = "Role";
 			NewAccountGridView.Columns["Balance"].HeaderText = "Current Balance";
 			NewAccountGridView.Columns["ProfileImage"].HeaderText = "Profile Image";
+			NewAccountGridView.Columns["OriginalSizeProfileImage"].Visible = false;
 		}
 
 		private void DisplayNewAccounts()
@@ -98,6 +100,7 @@ namespace Martinez_Bank.View.Admin
 			MothersNameTextBox.Clear();
 			FathersNameTextBox.Clear();
 			RoleComboBox.Text = DEFAULT_ROLE;
+			ImageUtility.DefaultImage(ProfileImagePictureBox);
 			BalanceTextBox.Clear();
 		}
 
@@ -161,6 +164,11 @@ namespace Martinez_Bank.View.Admin
 			var result = _repo.FindByKey(key);
 			NewAccountGridView.DataSource = result?.ToList();
 			Headers();
+		}
+
+		private void PhoneTextBox_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			RestrictionUtility.KeyPressAllowDigitOnly(sender, e);
 		}
 	}
 }

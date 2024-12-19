@@ -43,6 +43,7 @@
       <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.9.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -65,12 +66,18 @@
     <Compile Include="Config\ServiceInjection.cs" />
     <Compile Include="Dto\AccountDto.cs" />
     <Compile Include="Dto\CreateAccountDto.cs" />
+    <Compile Include="Dto\DepositDto.cs" />
+    <Compile Include="Dto\DepositLogsDto.cs" />
+    <Compile Include="Dto\UpdateAccountDto.cs" />
     <Compile Include="Model\CreateAccountModel.cs" />
+    <Compile Include="Model\DepositModel.cs" />
     <Compile Include="Model\UpdateAccountModel.cs" />
     <Compile Include="Persistence\Data\PCB.cs">
       <DependentUpon>PCB.dbml</DependentUpon>
     </Compile>
     <Compile Include="Repository\Admin\CreateAccountRepository.cs" />
+    <Compile Include="Repository\Admin\DepositRepository.cs" />
+    <Compile Include="Repository\Admin\UpdateAccountRepository.cs" />
     <Compile Include="Repository\Common\CommonRepository.cs" />
     <Compile Include="Persistence\Data\PCB.designer.cs">
       <AutoGen>True</AutoGen>
@@ -84,6 +91,8 @@
     </Compile>
     <Compile Include="Utilities\CommonIteratorUtility.cs" />
     <Compile Include="Utilities\ImageUtility.cs" />
+    <Compile Include="Utilities\PasswordUtility.cs" />
+    <Compile Include="Utilities\RestrictionUtility.cs" />
     <Compile Include="View\Admin\CreateAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +187,7 @@
     <None Include="resources\icons\icons8-deposit-48.png" />
     <None Include="resources\icons\icons8-change-48.png" />
     <None Include="resources\icons\icons8-account-48.png" />
+    <Content Include="Persistence\scripts\dbo.User.data.sql" />
     <Content Include="Persistence\scripts\scripts.sql" />
     <Content Include="resources\images\computerized.png" />
     <None Include="resources\images\default.png" />

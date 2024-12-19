@@ -75,11 +75,11 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.SearchTextBox = new System.Windows.Forms.TextBox();
 			this.NewAccountGridView = new System.Windows.Forms.DataGridView();
+			this.ReportLinkLabel = new System.Windows.Forms.LinkLabel();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
-			this.ReportLinkLabel = new System.Windows.Forms.LinkLabel();
 			this.tableLayoutPanel2.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.flowLayoutPanel2.SuspendLayout();
@@ -291,7 +291,7 @@
 			this.FullNameTextBox.Location = new System.Drawing.Point(3, 231);
 			this.FullNameTextBox.Name = "FullNameTextBox";
 			this.FullNameTextBox.Size = new System.Drawing.Size(486, 29);
-			this.FullNameTextBox.TabIndex = 6;
+			this.FullNameTextBox.TabIndex = 5;
 			// 
 			// label3
 			// 
@@ -313,7 +313,8 @@
 			this.PhoneTextBox.MaxLength = 11;
 			this.PhoneTextBox.Name = "PhoneTextBox";
 			this.PhoneTextBox.Size = new System.Drawing.Size(489, 29);
-			this.PhoneTextBox.TabIndex = 7;
+			this.PhoneTextBox.TabIndex = 6;
+			this.PhoneTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneTextBox_KeyPress);
 			// 
 			// label4
 			// 
@@ -333,7 +334,7 @@
 			this.AddressTextBox.Location = new System.Drawing.Point(3, 340);
 			this.AddressTextBox.Name = "AddressTextBox";
 			this.AddressTextBox.Size = new System.Drawing.Size(486, 29);
-			this.AddressTextBox.TabIndex = 8;
+			this.AddressTextBox.TabIndex = 7;
 			// 
 			// tableLayoutPanel8
 			// 
@@ -385,22 +386,22 @@
 			// 
 			this.MaritalStatusComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.MaritalStatusComboBox.FormattingEnabled = true;
-			this.MaritalStatusComboBox.Location = new System.Drawing.Point(3, 34);
+			this.MaritalStatusComboBox.Location = new System.Drawing.Point(3, 30);
 			this.MaritalStatusComboBox.Margin = new System.Windows.Forms.Padding(0);
 			this.MaritalStatusComboBox.Name = "MaritalStatusComboBox";
 			this.MaritalStatusComboBox.Size = new System.Drawing.Size(236, 29);
-			this.MaritalStatusComboBox.TabIndex = 9;
+			this.MaritalStatusComboBox.TabIndex = 8;
 			// 
 			// GenderComboBox
 			// 
 			this.GenderComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.GenderComboBox.DisplayMember = "Type";
 			this.GenderComboBox.FormattingEnabled = true;
-			this.GenderComboBox.Location = new System.Drawing.Point(241, 34);
+			this.GenderComboBox.Location = new System.Drawing.Point(241, 30);
 			this.GenderComboBox.Margin = new System.Windows.Forms.Padding(0);
 			this.GenderComboBox.Name = "GenderComboBox";
 			this.GenderComboBox.Size = new System.Drawing.Size(243, 29);
-			this.GenderComboBox.TabIndex = 10;
+			this.GenderComboBox.TabIndex = 9;
 			this.GenderComboBox.ValueMember = "Type";
 			// 
 			// label8
@@ -423,7 +424,7 @@
 			this.MothersNameTextBox.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
 			this.MothersNameTextBox.Name = "MothersNameTextBox";
 			this.MothersNameTextBox.Size = new System.Drawing.Size(489, 29);
-			this.MothersNameTextBox.TabIndex = 11;
+			this.MothersNameTextBox.TabIndex = 10;
 			// 
 			// label9
 			// 
@@ -444,7 +445,7 @@
 			this.FathersNameTextBox.Location = new System.Drawing.Point(3, 523);
 			this.FathersNameTextBox.Name = "FathersNameTextBox";
 			this.FathersNameTextBox.Size = new System.Drawing.Size(489, 29);
-			this.FathersNameTextBox.TabIndex = 12;
+			this.FathersNameTextBox.TabIndex = 11;
 			// 
 			// tableLayoutPanel9
 			// 
@@ -474,7 +475,7 @@
 			this.BalanceTextBox.Margin = new System.Windows.Forms.Padding(0);
 			this.BalanceTextBox.Name = "BalanceTextBox";
 			this.BalanceTextBox.Size = new System.Drawing.Size(243, 29);
-			this.BalanceTextBox.TabIndex = 14;
+			this.BalanceTextBox.TabIndex = 13;
 			// 
 			// label10
 			// 
@@ -498,7 +499,7 @@
 			this.RoleComboBox.Margin = new System.Windows.Forms.Padding(0);
 			this.RoleComboBox.Name = "RoleComboBox";
 			this.RoleComboBox.Size = new System.Drawing.Size(239, 29);
-			this.RoleComboBox.TabIndex = 13;
+			this.RoleComboBox.TabIndex = 12;
 			// 
 			// label14
 			// 
@@ -570,7 +571,7 @@
 			this.SaveButton.MinimumSize = new System.Drawing.Size(0, 35);
 			this.SaveButton.Name = "SaveButton";
 			this.SaveButton.Size = new System.Drawing.Size(242, 35);
-			this.SaveButton.TabIndex = 15;
+			this.SaveButton.TabIndex = 14;
 			this.SaveButton.Text = "Save";
 			this.SaveButton.UseVisualStyleBackColor = false;
 			this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
@@ -585,7 +586,7 @@
 			this.ClearAllFieldButton.MinimumSize = new System.Drawing.Size(0, 35);
 			this.ClearAllFieldButton.Name = "ClearAllFieldButton";
 			this.ClearAllFieldButton.Size = new System.Drawing.Size(242, 35);
-			this.ClearAllFieldButton.TabIndex = 16;
+			this.ClearAllFieldButton.TabIndex = 15;
 			this.ClearAllFieldButton.Text = "Clear";
 			this.ClearAllFieldButton.UseVisualStyleBackColor = false;
 			this.ClearAllFieldButton.Click += new System.EventHandler(this.ClearAllFieldButton_Click);
@@ -607,7 +608,6 @@
 			// ProfileImagePictureBox
 			// 
 			this.ProfileImagePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.ProfileImagePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.ProfileImagePictureBox.ErrorImage = global::Martinez_Bank.Properties.Resources._default;
 			this.ProfileImagePictureBox.InitialImage = global::Martinez_Bank.Properties.Resources._default;
 			this.ProfileImagePictureBox.Location = new System.Drawing.Point(232, 3);
@@ -632,7 +632,7 @@
 			this.SearchTextBox.Location = new System.Drawing.Point(3, 180);
 			this.SearchTextBox.Name = "SearchTextBox";
 			this.SearchTextBox.Size = new System.Drawing.Size(216, 29);
-			this.SearchTextBox.TabIndex = 17;
+			this.SearchTextBox.TabIndex = 16;
 			this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
 			// 
 			// NewAccountGridView
@@ -683,6 +683,16 @@
 			this.NewAccountGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
 			this.NewAccountGridView.Size = new System.Drawing.Size(609, 422);
 			this.NewAccountGridView.TabIndex = 2;
+			// 
+			// ReportLinkLabel
+			// 
+			this.ReportLinkLabel.AutoSize = true;
+			this.ReportLinkLabel.Location = new System.Drawing.Point(3, 640);
+			this.ReportLinkLabel.Name = "ReportLinkLabel";
+			this.ReportLinkLabel.Size = new System.Drawing.Size(124, 21);
+			this.ReportLinkLabel.TabIndex = 19;
+			this.ReportLinkLabel.TabStop = true;
+			this.ReportLinkLabel.Text = "Generate Report";
 			// 
 			// tableLayoutPanel1
 			// 
@@ -736,16 +746,6 @@
 			this.label12.Size = new System.Drawing.Size(313, 25);
 			this.label12.TabIndex = 1;
 			this.label12.Text = "Invite someone now to get started!";
-			// 
-			// ReportLinkLabel
-			// 
-			this.ReportLinkLabel.AutoSize = true;
-			this.ReportLinkLabel.Location = new System.Drawing.Point(3, 640);
-			this.ReportLinkLabel.Name = "ReportLinkLabel";
-			this.ReportLinkLabel.Size = new System.Drawing.Size(124, 21);
-			this.ReportLinkLabel.TabIndex = 19;
-			this.ReportLinkLabel.TabStop = true;
-			this.ReportLinkLabel.Text = "Generate Report";
 			// 
 			// CreateAccountForm
 			// 

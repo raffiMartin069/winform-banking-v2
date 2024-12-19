@@ -22,5 +22,7 @@ namespace Martinez_Bank.Dto
 		public string Fathername { get; set; }
 		public string Role { get; set; }
 		public decimal Balance { get; set; }
+		public Bitmap OriginalSizeProfileImage { get; set; }
+
 	}
 }
