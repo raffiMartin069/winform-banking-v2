@@ -66,10 +66,13 @@
     <Compile Include="Config\ServiceInjection.cs" />
     <Compile Include="Dto\AccountDto.cs" />
     <Compile Include="Dto\CreateAccountDto.cs" />
+    <Compile Include="Dto\WithdrawLogsDto.cs" />
+    <Compile Include="Dto\WithdrawDto.cs" />
     <Compile Include="Dto\DepositDto.cs" />
     <Compile Include="Dto\DepositLogsDto.cs" />
     <Compile Include="Dto\UpdateAccountDto.cs" />
     <Compile Include="Model\CreateAccountModel.cs" />
+    <Compile Include="Model\WithdrawModel.cs" />
     <Compile Include="Model\DepositModel.cs" />
     <Compile Include="Model\UpdateAccountModel.cs" />
     <Compile Include="Persistence\Data\PCB.cs">
@@ -78,6 +81,7 @@
     <Compile Include="Repository\Admin\CreateAccountRepository.cs" />
     <Compile Include="Repository\Admin\DepositRepository.cs" />
     <Compile Include="Repository\Admin\UpdateAccountRepository.cs" />
+    <Compile Include="Repository\Admin\WithdrawRepository.cs" />
     <Compile Include="Repository\Common\CommonRepository.cs" />
     <Compile Include="Persistence\Data\PCB.designer.cs">
       <AutoGen>True</AutoGen>
@@ -93,6 +97,12 @@
     <Compile Include="Utilities\ImageUtility.cs" />
     <Compile Include="Utilities\PasswordUtility.cs" />
     <Compile Include="Utilities\RestrictionUtility.cs" />
+    <Compile Include="View\Admin\CashTransferForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\CashTransferForm.Designer.cs">
+      <DependentUpon>CashTransferForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\CreateAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +141,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\Admin\CashTransferForm.resx">
+      <DependentUpon>CashTransferForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\CreateAccountForm.resx">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,9 +202,11 @@
     <None Include="resources\icons\icons8-account-48.png" />
     <Content Include="Persistence\scripts\dbo.User.data.sql" />
     <Content Include="Persistence\scripts\scripts.sql" />
+    <None Include="resources\icons\icons8-send-money-50.png" />
     <Content Include="resources\images\computerized.png" />
     <None Include="resources\images\default.png" />
     <Content Include="resources\images\e-statement.png" />
+    <None Include="resources\images\Hero-Banner-Image_Apply_OPTION1.png" />
     <Content Include="resources\images\interest-2.png" />
     <Content Include="resources\images\interest.png" />
     <Content Include="resources\images\loan-1.png" />

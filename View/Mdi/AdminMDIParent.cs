@@ -56,8 +56,16 @@ namespace Martinez_Bank.View.Mdi
 
 		private void Withdraw_Click(object sender, EventArgs e)
 		{
-			var withdraw = new WithdrawForm();
+			var context = new PCBDataContext();
+			var withdrawRepo = new WithdrawRepository(context);
+			var withdraw = new WithdrawForm(withdrawRepo);
 			ShowNewForm(withdraw);
+		}
+
+		private void ExpressSendButton_Click(object sender, EventArgs e)
+		{
+			var xpresend = new CashTransferForm();
+			ShowNewForm(xpresend);
 		}
 	}
 }

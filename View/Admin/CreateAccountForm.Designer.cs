@@ -71,7 +71,6 @@
 			this.SaveButton = new System.Windows.Forms.Button();
 			this.ClearAllFieldButton = new System.Windows.Forms.Button();
 			this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-			this.ProfileImagePictureBox = new System.Windows.Forms.PictureBox();
 			this.label11 = new System.Windows.Forms.Label();
 			this.SearchTextBox = new System.Windows.Forms.TextBox();
 			this.NewAccountGridView = new System.Windows.Forms.DataGridView();
@@ -80,6 +79,7 @@
 			this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
+			this.ProfileImagePictureBox = new System.Windows.Forms.PictureBox();
 			this.tableLayoutPanel2.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.flowLayoutPanel2.SuspendLayout();
@@ -88,14 +88,15 @@
 			this.tableLayoutPanel9.SuspendLayout();
 			this.tableLayoutPanel4.SuspendLayout();
 			this.flowLayoutPanel3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.ProfileImagePictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.NewAccountGridView)).BeginInit();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.flowLayoutPanel4.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.ProfileImagePictureBox)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel2
 			// 
+			this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
 			this.tableLayoutPanel2.ColumnCount = 2;
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -605,19 +606,6 @@
 			this.flowLayoutPanel3.Size = new System.Drawing.Size(612, 704);
 			this.flowLayoutPanel3.TabIndex = 1;
 			// 
-			// ProfileImagePictureBox
-			// 
-			this.ProfileImagePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.ProfileImagePictureBox.ErrorImage = global::Martinez_Bank.Properties.Resources._default;
-			this.ProfileImagePictureBox.InitialImage = global::Martinez_Bank.Properties.Resources._default;
-			this.ProfileImagePictureBox.Location = new System.Drawing.Point(232, 3);
-			this.ProfileImagePictureBox.MinimumSize = new System.Drawing.Size(150, 150);
-			this.ProfileImagePictureBox.Name = "ProfileImagePictureBox";
-			this.ProfileImagePictureBox.Size = new System.Drawing.Size(150, 150);
-			this.ProfileImagePictureBox.TabIndex = 18;
-			this.ProfileImagePictureBox.TabStop = false;
-			this.ProfileImagePictureBox.Click += new System.EventHandler(this.ProfileImagePictureBox_Click);
-			// 
 			// label11
 			// 
 			this.label11.AutoSize = true;
@@ -747,6 +735,19 @@
 			this.label12.TabIndex = 1;
 			this.label12.Text = "Invite someone now to get started!";
 			// 
+			// ProfileImagePictureBox
+			// 
+			this.ProfileImagePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.ProfileImagePictureBox.ErrorImage = global::Martinez_Bank.Properties.Resources._default;
+			this.ProfileImagePictureBox.InitialImage = global::Martinez_Bank.Properties.Resources._default;
+			this.ProfileImagePictureBox.Location = new System.Drawing.Point(232, 3);
+			this.ProfileImagePictureBox.MinimumSize = new System.Drawing.Size(150, 150);
+			this.ProfileImagePictureBox.Name = "ProfileImagePictureBox";
+			this.ProfileImagePictureBox.Size = new System.Drawing.Size(150, 150);
+			this.ProfileImagePictureBox.TabIndex = 18;
+			this.ProfileImagePictureBox.TabStop = false;
+			this.ProfileImagePictureBox.Click += new System.EventHandler(this.ProfileImagePictureBox_Click);
+			// 
 			// CreateAccountForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -776,11 +777,11 @@
 			this.tableLayoutPanel4.ResumeLayout(false);
 			this.flowLayoutPanel3.ResumeLayout(false);
 			this.flowLayoutPanel3.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.ProfileImagePictureBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.NewAccountGridView)).EndInit();
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.flowLayoutPanel4.ResumeLayout(false);
 			this.flowLayoutPanel4.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.ProfileImagePictureBox)).EndInit();
 			this.ResumeLayout(false);
 
 		}

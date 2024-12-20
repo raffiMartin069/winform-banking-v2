@@ -73,6 +73,16 @@ namespace Martinez_Bank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Hero_Banner_Image_Apply_OPTION1 {
+            get {
+                object obj = ResourceManager.GetObject("Hero-Banner-Image_Apply_OPTION1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_account_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-account-48", resourceCulture);
@@ -106,6 +116,16 @@ namespace Martinez_Bank.Properties {
         internal static System.Drawing.Bitmap icons8_deposit_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-deposit-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_send_money_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-send-money-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
