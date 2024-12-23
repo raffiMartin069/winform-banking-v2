@@ -64,8 +64,18 @@ namespace Martinez_Bank.View.Mdi
 
 		private void ExpressSendButton_Click(object sender, EventArgs e)
 		{
-			var xpresend = new CashTransferForm();
+			var context = new PCBDataContext();
+			var repo = new CashTransferRepository(context);
+			var xpresend = new CashTransferForm(repo);
 			ShowNewForm(xpresend);
+		}
+
+		private void SearchUserForm_Click(object sender, EventArgs e)
+		{
+			var context = new PCBDataContext();
+			var repo = new SearchClientRepository(context);
+			var searchUser = new SearchClientForm(repo);
+			ShowNewForm(searchUser);
 		}
 	}
 }

@@ -1,6 +1,6 @@
 ﻿namespace Martinez_Bank.View.Mdi
 {
-	partial class AdminMDIParent
+	partial class ClientMDIParent
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -29,26 +29,22 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMDIParent));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientMDIParent));
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.CreateAccountButton = new System.Windows.Forms.Button();
-			this.UpdateAccountButton = new System.Windows.Forms.Button();
 			this.Deposit = new System.Windows.Forms.Button();
 			this.Withdraw = new System.Windows.Forms.Button();
-			this.ExpressSendButton = new System.Windows.Forms.Button();
-			this.FindUserButton = new System.Windows.Forms.Button();
 			this.statusStrip.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.flowLayoutPanel2.SuspendLayout();
-			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// statusStrip
@@ -80,7 +76,7 @@
 			this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(250, 759);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
 			this.flowLayoutPanel1.Size = new System.Drawing.Size(250, 789);
-			this.flowLayoutPanel1.TabIndex = 4;
+			this.flowLayoutPanel1.TabIndex = 5;
 			// 
 			// flowLayoutPanel2
 			// 
@@ -95,6 +91,18 @@
 			this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(5);
 			this.flowLayoutPanel2.Size = new System.Drawing.Size(253, 150);
 			this.flowLayoutPanel2.TabIndex = 1;
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(76, 8);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 2;
+			this.pictureBox1.TabStop = false;
 			// 
 			// label3
 			// 
@@ -111,71 +119,19 @@
 			// 
 			this.tableLayoutPanel1.ColumnCount = 1;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.Controls.Add(this.CreateAccountButton, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.UpdateAccountButton, 0, 1);
-			this.tableLayoutPanel1.Controls.Add(this.Deposit, 0, 2);
-			this.tableLayoutPanel1.Controls.Add(this.Withdraw, 0, 3);
-			this.tableLayoutPanel1.Controls.Add(this.ExpressSendButton, 0, 4);
-			this.tableLayoutPanel1.Controls.Add(this.FindUserButton, 0, 5);
+			this.tableLayoutPanel1.Controls.Add(this.Deposit, 0, 0);
+			this.tableLayoutPanel1.Controls.Add(this.Withdraw, 0, 1);
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 153);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-			this.tableLayoutPanel1.RowCount = 6;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(247, 330);
+			this.tableLayoutPanel1.RowCount = 2;
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(247, 158);
 			this.tableLayoutPanel1.TabIndex = 0;
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(76, 8);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 2;
-			this.pictureBox1.TabStop = false;
-			// 
-			// CreateAccountButton
-			// 
-			this.CreateAccountButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.CreateAccountButton.FlatAppearance.BorderSize = 0;
-			this.CreateAccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.CreateAccountButton.ForeColor = System.Drawing.Color.White;
-			this.CreateAccountButton.Image = global::Martinez_Bank.Properties.Resources.icons8_account_48;
-			this.CreateAccountButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.CreateAccountButton.Location = new System.Drawing.Point(3, 3);
-			this.CreateAccountButton.Name = "CreateAccountButton";
-			this.CreateAccountButton.Size = new System.Drawing.Size(241, 48);
-			this.CreateAccountButton.TabIndex = 2;
-			this.CreateAccountButton.Text = "Create account";
-			this.CreateAccountButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.CreateAccountButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.CreateAccountButton.UseVisualStyleBackColor = true;
-			this.CreateAccountButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CreateAccountButton_Click);
-			// 
-			// UpdateAccountButton
-			// 
-			this.UpdateAccountButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.UpdateAccountButton.FlatAppearance.BorderSize = 0;
-			this.UpdateAccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.UpdateAccountButton.ForeColor = System.Drawing.Color.White;
-			this.UpdateAccountButton.Image = global::Martinez_Bank.Properties.Resources.icons8_change_48;
-			this.UpdateAccountButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.UpdateAccountButton.Location = new System.Drawing.Point(3, 58);
-			this.UpdateAccountButton.Name = "UpdateAccountButton";
-			this.UpdateAccountButton.Size = new System.Drawing.Size(241, 48);
-			this.UpdateAccountButton.TabIndex = 1;
-			this.UpdateAccountButton.Text = "Update account";
-			this.UpdateAccountButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.UpdateAccountButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.UpdateAccountButton.UseVisualStyleBackColor = true;
-			this.UpdateAccountButton.Click += new System.EventHandler(this.UpdateAccountButton_Click);
 			// 
 			// Deposit
 			// 
@@ -185,7 +141,7 @@
 			this.Deposit.ForeColor = System.Drawing.Color.White;
 			this.Deposit.Image = global::Martinez_Bank.Properties.Resources.icons8_deposit_48;
 			this.Deposit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.Deposit.Location = new System.Drawing.Point(3, 112);
+			this.Deposit.Location = new System.Drawing.Point(3, 15);
 			this.Deposit.Name = "Deposit";
 			this.Deposit.Size = new System.Drawing.Size(241, 48);
 			this.Deposit.TabIndex = 1;
@@ -203,7 +159,7 @@
 			this.Withdraw.ForeColor = System.Drawing.Color.White;
 			this.Withdraw.Image = global::Martinez_Bank.Properties.Resources.icons8_withdraw_48;
 			this.Withdraw.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.Withdraw.Location = new System.Drawing.Point(3, 166);
+			this.Withdraw.Location = new System.Drawing.Point(3, 94);
 			this.Withdraw.Name = "Withdraw";
 			this.Withdraw.Size = new System.Drawing.Size(241, 48);
 			this.Withdraw.TabIndex = 1;
@@ -213,43 +169,7 @@
 			this.Withdraw.UseVisualStyleBackColor = true;
 			this.Withdraw.Click += new System.EventHandler(this.Withdraw_Click);
 			// 
-			// ExpressSendButton
-			// 
-			this.ExpressSendButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.ExpressSendButton.FlatAppearance.BorderSize = 0;
-			this.ExpressSendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.ExpressSendButton.ForeColor = System.Drawing.Color.White;
-			this.ExpressSendButton.Image = global::Martinez_Bank.Properties.Resources.icons8_send_money_50;
-			this.ExpressSendButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.ExpressSendButton.Location = new System.Drawing.Point(3, 220);
-			this.ExpressSendButton.Name = "ExpressSendButton";
-			this.ExpressSendButton.Size = new System.Drawing.Size(241, 48);
-			this.ExpressSendButton.TabIndex = 1;
-			this.ExpressSendButton.Text = "Express Send";
-			this.ExpressSendButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.ExpressSendButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.ExpressSendButton.UseVisualStyleBackColor = true;
-			this.ExpressSendButton.Click += new System.EventHandler(this.ExpressSendButton_Click);
-			// 
-			// FindUserButton
-			// 
-			this.FindUserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.FindUserButton.FlatAppearance.BorderSize = 0;
-			this.FindUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.FindUserButton.ForeColor = System.Drawing.Color.White;
-			this.FindUserButton.Image = global::Martinez_Bank.Properties.Resources.icons8_search_50;
-			this.FindUserButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.FindUserButton.Location = new System.Drawing.Point(3, 274);
-			this.FindUserButton.Name = "FindUserButton";
-			this.FindUserButton.Size = new System.Drawing.Size(241, 53);
-			this.FindUserButton.TabIndex = 1;
-			this.FindUserButton.Text = "Find User";
-			this.FindUserButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.FindUserButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.FindUserButton.UseVisualStyleBackColor = true;
-			this.FindUserButton.Click += new System.EventHandler(this.SearchUserForm_Click);
-			// 
-			// AdminMDIParent
+			// ClientMDIParent
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -260,35 +180,31 @@
 			this.IsMdiContainer = true;
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.MinimumSize = new System.Drawing.Size(1540, 850);
-			this.Name = "AdminMDIParent";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "AdminMDIParent";
+			this.Name = "ClientMDIParent";
+			this.Text = "ClientMDIParent";
 			this.statusStrip.ResumeLayout(false);
 			this.statusStrip.PerformLayout();
 			this.flowLayoutPanel1.ResumeLayout(false);
 			this.flowLayoutPanel2.ResumeLayout(false);
 			this.flowLayoutPanel2.PerformLayout();
-			this.tableLayoutPanel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.tableLayoutPanel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 		#endregion
+
 		private System.Windows.Forms.StatusStrip statusStrip;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
 		private System.Windows.Forms.ToolTip toolTip;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-		private System.Windows.Forms.Button UpdateAccountButton;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.Button Deposit;
 		private System.Windows.Forms.Button Withdraw;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.Button CreateAccountButton;
-		private System.Windows.Forms.Button ExpressSendButton;
-		private System.Windows.Forms.Button FindUserButton;
 	}
 }
 
