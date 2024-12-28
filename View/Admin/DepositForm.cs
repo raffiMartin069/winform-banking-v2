@@ -1,6 +1,7 @@
 ﻿using Martinez_Bank.Model;
 using Martinez_Bank.Repository.Admin;
 using Martinez_Bank.Utilities;
+using Martinez_Bank.View.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -122,6 +123,13 @@ namespace Martinez_Bank.View.Admin
 		private void DepositAmountTextBox_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			RestrictionUtility.KeyPressAllowDigitOnly(sender, e);
+		}
+
+		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			var report = new DepositReportForm();
+			report.MdiParent = this.MdiParent;
+			report.Show();
 		}
 	}
 }

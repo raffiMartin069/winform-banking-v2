@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="PCB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.625, 8.75" name="PCB">
   <DataContextMoniker Name="/PCBDataContext" />
   <nestedChildShapes>
     <classShape Id="1a82cdac-07d8-4c4a-8868-0b7bd2bfcbc2" absoluteBounds="3.5, 1.125, 2, 2.1554996744791666">
@@ -38,14 +38,14 @@
         <elementListCompartment Id="f5813aa3-1b45-4100-90b9-07967e70ddb9" absoluteBounds="0.765, 2.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 2.51524983723958); (3.5 : 2.51524983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.51524983723958); (3.5 : 2.51524983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/PCBDataContext/User/User_Deposit" />
       <nodes>
         <classShapeMoniker Id="40a257ab-9d9a-4b5d-8adf-a782986cd25c" />
         <classShapeMoniker Id="1a82cdac-07d8-4c4a-8868-0b7bd2bfcbc2" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.72195556640625); (3.5 : 4.72195556640625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.72195556640625); (3.5 : 4.72195556640625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/PCBDataContext/User/User_Withdraw" />
       <nodes>
         <classShapeMoniker Id="40a257ab-9d9a-4b5d-8adf-a782986cd25c" />
@@ -56,6 +56,12 @@
       <DataClassMoniker Name="/PCBDataContext/DepositMode" />
       <nestedChildShapes>
         <elementListCompartment Id="957545ac-b244-42dc-aaaf-6ccb4d57d810" absoluteBounds="5.14, 7.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="70c86cfa-91db-4554-a8ee-a87205b69159" absoluteBounds="9.375, 2.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PCBDataContext/WithdrawMode" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9078956f-d969-4731-b551-fc7d3c3121c6" absoluteBounds="9.39, 2.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

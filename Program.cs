@@ -1,6 +1,7 @@
 ﻿using Martinez_Bank.Config;
 using Martinez_Bank.View.Admin;
 using Martinez_Bank.View.Mdi;
+using Martinez_Bank.View.Reports;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -25,9 +26,12 @@ namespace Martinez_Bank
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			//Application.Run(new SignInForm());
+			Application.Run(new SignInForm());
 			//Application.Run(new CreateAccountForm());
-			Application.Run(new AdminMDIParent());
+			//Application.Run(new AdminMDIParent());
+			//Application.Run(new DepositReportForm());
+			//Application.Run(new ClientMDIParent());
+			//Application.Run(new WithdrawReportForm());
 		}
 	}
 }

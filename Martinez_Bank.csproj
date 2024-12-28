@@ -42,6 +42,24 @@
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.9.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -52,6 +70,7 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,19 +84,27 @@
   <ItemGroup>
     <Compile Include="Config\ServiceInjection.cs" />
     <Compile Include="Dto\AccountDto.cs" />
+    <Compile Include="Dto\AuthenticationDto.cs" />
     <Compile Include="Dto\CreateAccountDto.cs" />
+    <Compile Include="Dto\User.cs" />
+    <Compile Include="Dto\WithdrawLogsDto.cs" />
+    <Compile Include="Dto\WithdrawDto.cs" />
     <Compile Include="Dto\DepositDto.cs" />
     <Compile Include="Dto\DepositLogsDto.cs" />
     <Compile Include="Dto\UpdateAccountDto.cs" />
     <Compile Include="Model\CreateAccountModel.cs" />
+    <Compile Include="Model\WithdrawModel.cs" />
     <Compile Include="Model\DepositModel.cs" />
     <Compile Include="Model\UpdateAccountModel.cs" />
     <Compile Include="Persistence\Data\PCB.cs">
       <DependentUpon>PCB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Repository\Admin\CashTransferRepository.cs" />
     <Compile Include="Repository\Admin\CreateAccountRepository.cs" />
     <Compile Include="Repository\Admin\DepositRepository.cs" />
+    <Compile Include="Repository\Admin\SearchClientRepository.cs" />
     <Compile Include="Repository\Admin\UpdateAccountRepository.cs" />
+    <Compile Include="Repository\Admin\WithdrawRepository.cs" />
     <Compile Include="Repository\Common\CommonRepository.cs" />
     <Compile Include="Persistence\Data\PCB.designer.cs">
       <AutoGen>True</AutoGen>
@@ -89,10 +116,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="resources\reports\DepositDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepositDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="resources\reports\DepositHistoryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepositHistoryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="resources\reports\WithdrawReportByIdDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WithdrawReportByIdDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Utilities\CommonIteratorUtility.cs" />
     <Compile Include="Utilities\ImageUtility.cs" />
     <Compile Include="Utilities\PasswordUtility.cs" />
     <Compile Include="Utilities\RestrictionUtility.cs" />
+    <Compile Include="View\Admin\CashTransferForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\CashTransferForm.Designer.cs">
+      <DependentUpon>CashTransferForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\CreateAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +153,12 @@
     </Compile>
     <Compile Include="View\Admin\DepositForm.Designer.cs">
       <DependentUpon>DepositForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\SearchClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\SearchClientForm.Designer.cs">
+      <DependentUpon>SearchClientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\UpdateAccountForm.cs">
       <SubType>Form</SubType>
@@ -117,11 +172,53 @@
     <Compile Include="View\Admin\WithdrawForm.Designer.cs">
       <DependentUpon>WithdrawForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Client\DepositForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Client\DepositForm.Designer.cs">
+      <DependentUpon>DepositForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Client\DepositHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Client\DepositHistoryForm.Designer.cs">
+      <DependentUpon>DepositHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Client\WithdrawForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Client\WithdrawForm.Designer.cs">
+      <DependentUpon>WithdrawForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Client\WithdrawLogsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Client\WithdrawLogsForm.Designer.cs">
+      <DependentUpon>WithdrawLogsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Mdi\AdminMDIParent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Mdi\AdminMDIParent.Designer.cs">
       <DependentUpon>AdminMDIParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mdi\ClientMDIParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Mdi\ClientMDIParent.Designer.cs">
+      <DependentUpon>ClientMDIParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\DepositReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\DepositReportForm.Designer.cs">
+      <DependentUpon>DepositReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\WithdrawReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\WithdrawReportForm.Designer.cs">
+      <DependentUpon>WithdrawReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SignInForm.cs">
       <SubType>Form</SubType>
@@ -131,11 +228,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinForm\Session.cs" />
+    <EmbeddedResource Include="resources\reports\DepositHistory.rdlc" />
+    <EmbeddedResource Include="resources\reports\DepositReport.rdlc" />
+    <EmbeddedResource Include="resources\reports\WithdrawalReport.rdlc" />
+    <EmbeddedResource Include="resources\reports\WithdrawHistory.rdlc" />
+    <EmbeddedResource Include="View\Admin\CashTransferForm.resx">
+      <DependentUpon>CashTransferForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\CreateAccountForm.resx">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\DepositForm.resx">
       <DependentUpon>DepositForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\SearchClientForm.resx">
+      <DependentUpon>SearchClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\UpdateAccountForm.resx">
       <DependentUpon>UpdateAccountForm.cs</DependentUpon>
@@ -143,8 +251,29 @@
     <EmbeddedResource Include="View\Admin\WithdrawForm.resx">
       <DependentUpon>WithdrawForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Client\DepositForm.resx">
+      <DependentUpon>DepositForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Client\DepositHistoryForm.resx">
+      <DependentUpon>DepositHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Client\WithdrawForm.resx">
+      <DependentUpon>WithdrawForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Client\WithdrawLogsForm.resx">
+      <DependentUpon>WithdrawLogsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Mdi\AdminMDIParent.resx">
       <DependentUpon>AdminMDIParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Mdi\ClientMDIParent.resx">
+      <DependentUpon>ClientMDIParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reports\DepositReportForm.resx">
+      <DependentUpon>DepositReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reports\WithdrawReportForm.resx">
+      <DependentUpon>WithdrawReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
@@ -173,15 +302,62 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="resources\images\Windows Forms.zip" />
+    <None Include="resources\reports\DepositDataSet.xsc">
+      <DependentUpon>DepositDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="resources\reports\DepositDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DepositDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="resources\reports\DepositDataSet.xss">
+      <DependentUpon>DepositDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="resources\reports\DepositHistoryDataSet.xsc">
+      <DependentUpon>DepositHistoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="resources\reports\DepositHistoryDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DepositHistoryDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="resources\reports\DepositHistoryDataSet.xss">
+      <DependentUpon>DepositHistoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="resources\reports\WithdrawReportByIdDataSet.xsc">
+      <DependentUpon>WithdrawReportByIdDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="resources\reports\WithdrawReportByIdDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WithdrawReportByIdDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="resources\reports\WithdrawReportByIdDataSet.xss">
+      <DependentUpon>WithdrawReportByIdDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Presenter\" />
-    <Folder Include="View\Client\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\icons\icons8-history-50.png" />
+    <None Include="resources\icons\icons8-log-out-48.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="resources\icons\icons8-account-96.png" />
     <None Include="resources\icons\icons8-withdraw-48.png" />
     <None Include="resources\icons\icons8-deposit-48.png" />
@@ -189,14 +365,19 @@
     <None Include="resources\icons\icons8-account-48.png" />
     <Content Include="Persistence\scripts\dbo.User.data.sql" />
     <Content Include="Persistence\scripts\scripts.sql" />
+    <None Include="resources\icons\icons8-send-money-50.png" />
+    <None Include="resources\icons\icons8-search-50.png" />
     <Content Include="resources\images\computerized.png" />
     <None Include="resources\images\default.png" />
     <Content Include="resources\images\e-statement.png" />
+    <None Include="resources\images\Hero-Banner-Image_Apply_OPTION1.png" />
+    <None Include="resources\images\homepages-woman-using-calculator-312x232px.png.png" />
     <Content Include="resources\images\interest-2.png" />
     <Content Include="resources\images\interest.png" />
     <Content Include="resources\images\loan-1.png" />
     <Content Include="resources\images\loan-2.png" />
     <Content Include="resources\images\logo.png" />
+    <None Include="resources\images\pia-4.png" />
     <Content Include="resources\images\security.png" />
     <Content Include="resources\images\transfer.png" />
   </ItemGroup>

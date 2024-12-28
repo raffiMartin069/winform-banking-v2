@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DepositHistoryDataSet" targetNamespace="http://tempuri.org/DepositHistoryDataSet.xsd" xmlns:mstns="http://tempuri.org/DepositHistoryDataSet.xsd" xmlns="http://tempuri.org/DepositHistoryDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="PCBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PCBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Martinez_Bank.Properties.Settings.GlobalReference.Default.PCBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DepositHistoryDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DepositHistoryDataSet" msprop:Generator_DataSetName="DepositHistoryDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SP_DepositHistory" msprop:Generator_RowEvHandlerName="SP_DepositHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_DepositHistoryRowDeleted" msprop:Generator_RowDeletingName="SP_DepositHistoryRowDeleting" msprop:Generator_RowEvArgName="SP_DepositHistoryRowChangeEvent" msprop:Generator_TablePropName="SP_DepositHistory" msprop:Generator_RowChangedName="SP_DepositHistoryRowChanged" msprop:Generator_RowChangingName="SP_DepositHistoryRowChanging" msprop:Generator_TableClassName="SP_DepositHistoryDataTable" msprop:Generator_RowClassName="SP_DepositHistoryRow" msprop:Generator_TableVarName="tableSP_DepositHistory" msprop:Generator_UserTableName="SP_DepositHistory">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Fullname" msprop:Generator_ColumnPropNameInRow="Fullname" msprop:Generator_ColumnPropNameInTable="FullnameColumn" msprop:Generator_ColumnVarNameInTable="columnFullname" msprop:Generator_UserColumnName="Fullname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AccountNumber" msprop:Generator_ColumnPropNameInRow="AccountNumber" msprop:Generator_ColumnPropNameInTable="AccountNumberColumn" msprop:Generator_ColumnVarNameInTable="columnAccountNumber" msprop:Generator_UserColumnName="AccountNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="17" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PreviousBalance" msprop:Generator_ColumnPropNameInRow="PreviousBalance" msprop:Generator_ColumnPropNameInTable="PreviousBalanceColumn" msprop:Generator_ColumnVarNameInTable="columnPreviousBalance" msprop:Generator_UserColumnName="PreviousBalance" type="xs:decimal" />
+              <xs:element name="CurrentBalance" msprop:Generator_ColumnPropNameInRow="CurrentBalance" msprop:Generator_ColumnPropNameInTable="CurrentBalanceColumn" msprop:Generator_ColumnVarNameInTable="columnCurrentBalance" msprop:Generator_UserColumnName="CurrentBalance" type="xs:decimal" />
+              <xs:element name="DateUpdate" msprop:Generator_ColumnPropNameInRow="DateUpdate" msprop:Generator_ColumnPropNameInTable="DateUpdateColumn" msprop:Generator_ColumnVarNameInTable="columnDateUpdate" msprop:Generator_UserColumnName="DateUpdate" type="xs:dateTime" />
+              <xs:element name="TimeUpdated" msprop:Generator_ColumnPropNameInRow="TimeUpdated" msprop:Generator_ColumnPropNameInTable="TimeUpdatedColumn" msprop:Generator_ColumnVarNameInTable="columnTimeUpdated" msprop:Generator_UserColumnName="TimeUpdated" type="xs:duration" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SP_DepositHistory" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
