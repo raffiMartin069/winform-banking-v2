@@ -170,5 +170,10 @@ namespace Martinez_Bank.View.Admin
 		{
 			RestrictionUtility.KeyPressAllowDigitOnly(sender, e);
 		}
+
+		private void BalanceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			RestrictionUtility.KeyPressAllowDigitOnly(sender, e);
+		}
 	}
 }

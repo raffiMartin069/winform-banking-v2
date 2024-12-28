@@ -107,6 +107,18 @@ namespace Martinez_Bank.Model
 
 		private decimal BalanceValidator()
 		{
+			if (Role.Equals("Admin") && Balance == "0")
+				return 0;
+
+			if (Role.Equals("Admin") && Balance == "")
+				return 0;
+
+			if (Role.Equals("Admin") && Balance == null)
+				return 0;
+
+			if (Role.Equals("Admin") && Balance != "0")
+				throw new Exception("Admin role can not have initial balance.");
+
 			if (string.IsNullOrEmpty(Balance))
 				throw new Exception("Balance can not be empty.");
 
