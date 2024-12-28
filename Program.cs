@@ -26,11 +26,12 @@ namespace Martinez_Bank
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			//Application.Run(new SignInForm());
+			Application.Run(new SignInForm());
 			//Application.Run(new CreateAccountForm());
 			//Application.Run(new AdminMDIParent());
+			//Application.Run(new DepositReportForm());
 			//Application.Run(new ClientMDIParent());
-			Application.Run(new DynamicReportForm());
+			//Application.Run(new WithdrawReportForm());
 		}
 	}
 }

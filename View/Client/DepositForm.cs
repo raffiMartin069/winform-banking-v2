@@ -1,6 +1,7 @@
 ﻿using Martinez_Bank.Model;
 using Martinez_Bank.Repository.Admin;
 using Martinez_Bank.Utilities;
+using Martinez_Bank.WinForm.Sessions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Martinez_Bank.View.Client
 {
 	public partial class DepositForm : Form
 	{
+		public event Action<string> BalanceUpdated;
 		private readonly DepositRepository _depositRepo;
 		public DepositForm(DepositRepository depositRepo)
 		{
@@ -47,6 +49,9 @@ namespace Martinez_Bank.View.Client
 				}
 
 				MessageBox.Show("Deposit successful.");
+				string amount = (decimal.Parse(CurrentBalanceTextBox.Text) + decimal.Parse(DepositAmountTextBox.Text)).ToString();
+				Session.Set("Balance", amount);
+				BalanceUpdated?.Invoke(amount);
 				ClearFields();
 			}
 			catch (Exception ex)

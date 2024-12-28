@@ -1,6 +1,7 @@
 ﻿using Martinez_Bank.Model;
 using Martinez_Bank.Repository.Admin;
 using Martinez_Bank.Utilities;
+using Martinez_Bank.WinForm.Sessions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace Martinez_Bank.View.Client
 	public partial class WithdrawForm : Form
 	{
 		private readonly WithdrawRepository _withdrawRepository;
+		public event Action<string> BalanceUpdated;
 		public WithdrawForm(WithdrawRepository withdrawRepository)
 		{
 			InitializeComponent();
@@ -60,6 +62,12 @@ namespace Martinez_Bank.View.Client
 				}
 
 				MessageBox.Show("Withdraw successful!");
+
+				string amount = (decimal.Parse(CurrentBalanceTextBox.Text) - decimal.Parse(WithdrawAmountTextbox.Text)).ToString();
+
+				Session.Set("Balance", amount);
+				BalanceUpdated?.Invoke(amount);
+
 				ClearField();
 
 			}

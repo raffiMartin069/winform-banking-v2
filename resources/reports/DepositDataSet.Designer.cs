@@ -20,17 +20,17 @@ namespace Martinez_Bank.resources.reports {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("WithdrawDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DepositDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class WithdrawDataSet : global::System.Data.DataSet {
+    public partial class DepositDataSet : global::System.Data.DataSet {
         
-        private SP_GetAllWithdrawLogsDataTable tableSP_GetAllWithdrawLogs;
+        private SP_GetAllDepositRecordsDataTable tableSP_GetAllDepositRecords;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public WithdrawDataSet() {
+        public DepositDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Martinez_Bank.resources.reports {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected WithdrawDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DepositDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Martinez_Bank.resources.reports {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["SP_GetAllWithdrawLogs"] != null)) {
-                    base.Tables.Add(new SP_GetAllWithdrawLogsDataTable(ds.Tables["SP_GetAllWithdrawLogs"]));
+                if ((ds.Tables["SP_GetAllDepositRecords"] != null)) {
+                    base.Tables.Add(new SP_GetAllDepositRecordsDataTable(ds.Tables["SP_GetAllDepositRecords"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Martinez_Bank.resources.reports {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SP_GetAllWithdrawLogsDataTable SP_GetAllWithdrawLogs {
+        public SP_GetAllDepositRecordsDataTable SP_GetAllDepositRecords {
             get {
-                return this.tableSP_GetAllWithdrawLogs;
+                return this.tableSP_GetAllDepositRecords;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Martinez_Bank.resources.reports {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            WithdrawDataSet cln = ((WithdrawDataSet)(base.Clone()));
+            DepositDataSet cln = ((DepositDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Martinez_Bank.resources.reports {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["SP_GetAllWithdrawLogs"] != null)) {
-                    base.Tables.Add(new SP_GetAllWithdrawLogsDataTable(ds.Tables["SP_GetAllWithdrawLogs"]));
+                if ((ds.Tables["SP_GetAllDepositRecords"] != null)) {
+                    base.Tables.Add(new SP_GetAllDepositRecordsDataTable(ds.Tables["SP_GetAllDepositRecords"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Martinez_Bank.resources.reports {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableSP_GetAllWithdrawLogs = ((SP_GetAllWithdrawLogsDataTable)(base.Tables["SP_GetAllWithdrawLogs"]));
+            this.tableSP_GetAllDepositRecords = ((SP_GetAllDepositRecordsDataTable)(base.Tables["SP_GetAllDepositRecords"]));
             if ((initTable == true)) {
-                if ((this.tableSP_GetAllWithdrawLogs != null)) {
-                    this.tableSP_GetAllWithdrawLogs.InitVars();
+                if ((this.tableSP_GetAllDepositRecords != null)) {
+                    this.tableSP_GetAllDepositRecords.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Martinez_Bank.resources.reports {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "WithdrawDataSet";
+            this.DataSetName = "DepositDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/WithdrawDataSet.xsd";
+            this.Namespace = "http://tempuri.org/DepositDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableSP_GetAllWithdrawLogs = new SP_GetAllWithdrawLogsDataTable();
-            base.Tables.Add(this.tableSP_GetAllWithdrawLogs);
+            this.tableSP_GetAllDepositRecords = new SP_GetAllDepositRecordsDataTable();
+            base.Tables.Add(this.tableSP_GetAllDepositRecords);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeSP_GetAllWithdrawLogs() {
+        private bool ShouldSerializeSP_GetAllDepositRecords() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Martinez_Bank.resources.reports {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            WithdrawDataSet ds = new WithdrawDataSet();
+            DepositDataSet ds = new DepositDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace Martinez_Bank.resources.reports {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void SP_GetAllWithdrawLogsRowChangeEventHandler(object sender, SP_GetAllWithdrawLogsRowChangeEvent e);
+        public delegate void SP_GetAllDepositRecordsRowChangeEventHandler(object sender, SP_GetAllDepositRecordsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SP_GetAllWithdrawLogsDataTable : global::System.Data.TypedTableBase<SP_GetAllWithdrawLogsRow> {
+        public partial class SP_GetAllDepositRecordsDataTable : global::System.Data.TypedTableBase<SP_GetAllDepositRecordsRow> {
             
             private global::System.Data.DataColumn columnId;
             
@@ -295,8 +295,8 @@ namespace Martinez_Bank.resources.reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_GetAllWithdrawLogsDataTable() {
-                this.TableName = "SP_GetAllWithdrawLogs";
+            public SP_GetAllDepositRecordsDataTable() {
+                this.TableName = "SP_GetAllDepositRecords";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +304,7 @@ namespace Martinez_Bank.resources.reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal SP_GetAllWithdrawLogsDataTable(global::System.Data.DataTable table) {
+            internal SP_GetAllDepositRecordsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,7 +321,7 @@ namespace Martinez_Bank.resources.reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected SP_GetAllWithdrawLogsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SP_GetAllDepositRecordsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -393,34 +393,34 @@ namespace Martinez_Bank.resources.reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_GetAllWithdrawLogsRow this[int index] {
+            public SP_GetAllDepositRecordsRow this[int index] {
                 get {
-                    return ((SP_GetAllWithdrawLogsRow)(this.Rows[index]));
+                    return ((SP_GetAllDepositRecordsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SP_GetAllWithdrawLogsRowChangeEventHandler SP_GetAllWithdrawLogsRowChanging;
+            public event SP_GetAllDepositRecordsRowChangeEventHandler SP_GetAllDepositRecordsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SP_GetAllWithdrawLogsRowChangeEventHandler SP_GetAllWithdrawLogsRowChanged;
+            public event SP_GetAllDepositRecordsRowChangeEventHandler SP_GetAllDepositRecordsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SP_GetAllWithdrawLogsRowChangeEventHandler SP_GetAllWithdrawLogsRowDeleting;
+            public event SP_GetAllDepositRecordsRowChangeEventHandler SP_GetAllDepositRecordsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SP_GetAllWithdrawLogsRowChangeEventHandler SP_GetAllWithdrawLogsRowDeleted;
+            public event SP_GetAllDepositRecordsRowChangeEventHandler SP_GetAllDepositRecordsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddSP_GetAllWithdrawLogsRow(SP_GetAllWithdrawLogsRow row) {
+            public void AddSP_GetAllDepositRecordsRow(SP_GetAllDepositRecordsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_GetAllWithdrawLogsRow AddSP_GetAllWithdrawLogsRow(string Fullname, string AccountNumber, decimal PreviousBalance, decimal CurrentBalance, System.DateTime DateUpdate, System.TimeSpan TimeUpdated) {
-                SP_GetAllWithdrawLogsRow rowSP_GetAllWithdrawLogsRow = ((SP_GetAllWithdrawLogsRow)(this.NewRow()));
+            public SP_GetAllDepositRecordsRow AddSP_GetAllDepositRecordsRow(string Fullname, string AccountNumber, decimal PreviousBalance, decimal CurrentBalance, System.DateTime DateUpdate, System.TimeSpan TimeUpdated) {
+                SP_GetAllDepositRecordsRow rowSP_GetAllDepositRecordsRow = ((SP_GetAllDepositRecordsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Fullname,
@@ -429,22 +429,22 @@ namespace Martinez_Bank.resources.reports {
                         CurrentBalance,
                         DateUpdate,
                         TimeUpdated};
-                rowSP_GetAllWithdrawLogsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSP_GetAllWithdrawLogsRow);
-                return rowSP_GetAllWithdrawLogsRow;
+                rowSP_GetAllDepositRecordsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSP_GetAllDepositRecordsRow);
+                return rowSP_GetAllDepositRecordsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_GetAllWithdrawLogsRow FindById(int Id) {
-                return ((SP_GetAllWithdrawLogsRow)(this.Rows.Find(new object[] {
+            public SP_GetAllDepositRecordsRow FindById(int Id) {
+                return ((SP_GetAllDepositRecordsRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                SP_GetAllWithdrawLogsDataTable cln = ((SP_GetAllWithdrawLogsDataTable)(base.Clone()));
+                SP_GetAllDepositRecordsDataTable cln = ((SP_GetAllDepositRecordsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -452,7 +452,7 @@ namespace Martinez_Bank.resources.reports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SP_GetAllWithdrawLogsDataTable();
+                return new SP_GetAllDepositRecordsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -502,28 +502,28 @@ namespace Martinez_Bank.resources.reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_GetAllWithdrawLogsRow NewSP_GetAllWithdrawLogsRow() {
-                return ((SP_GetAllWithdrawLogsRow)(this.NewRow()));
+            public SP_GetAllDepositRecordsRow NewSP_GetAllDepositRecordsRow() {
+                return ((SP_GetAllDepositRecordsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SP_GetAllWithdrawLogsRow(builder);
+                return new SP_GetAllDepositRecordsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(SP_GetAllWithdrawLogsRow);
+                return typeof(SP_GetAllDepositRecordsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SP_GetAllWithdrawLogsRowChanged != null)) {
-                    this.SP_GetAllWithdrawLogsRowChanged(this, new SP_GetAllWithdrawLogsRowChangeEvent(((SP_GetAllWithdrawLogsRow)(e.Row)), e.Action));
+                if ((this.SP_GetAllDepositRecordsRowChanged != null)) {
+                    this.SP_GetAllDepositRecordsRowChanged(this, new SP_GetAllDepositRecordsRowChangeEvent(((SP_GetAllDepositRecordsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -531,8 +531,8 @@ namespace Martinez_Bank.resources.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SP_GetAllWithdrawLogsRowChanging != null)) {
-                    this.SP_GetAllWithdrawLogsRowChanging(this, new SP_GetAllWithdrawLogsRowChangeEvent(((SP_GetAllWithdrawLogsRow)(e.Row)), e.Action));
+                if ((this.SP_GetAllDepositRecordsRowChanging != null)) {
+                    this.SP_GetAllDepositRecordsRowChanging(this, new SP_GetAllDepositRecordsRowChangeEvent(((SP_GetAllDepositRecordsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -540,8 +540,8 @@ namespace Martinez_Bank.resources.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SP_GetAllWithdrawLogsRowDeleted != null)) {
-                    this.SP_GetAllWithdrawLogsRowDeleted(this, new SP_GetAllWithdrawLogsRowChangeEvent(((SP_GetAllWithdrawLogsRow)(e.Row)), e.Action));
+                if ((this.SP_GetAllDepositRecordsRowDeleted != null)) {
+                    this.SP_GetAllDepositRecordsRowDeleted(this, new SP_GetAllDepositRecordsRowChangeEvent(((SP_GetAllDepositRecordsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -549,14 +549,14 @@ namespace Martinez_Bank.resources.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SP_GetAllWithdrawLogsRowDeleting != null)) {
-                    this.SP_GetAllWithdrawLogsRowDeleting(this, new SP_GetAllWithdrawLogsRowChangeEvent(((SP_GetAllWithdrawLogsRow)(e.Row)), e.Action));
+                if ((this.SP_GetAllDepositRecordsRowDeleting != null)) {
+                    this.SP_GetAllDepositRecordsRowDeleting(this, new SP_GetAllDepositRecordsRowChangeEvent(((SP_GetAllDepositRecordsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveSP_GetAllWithdrawLogsRow(SP_GetAllWithdrawLogsRow row) {
+            public void RemoveSP_GetAllDepositRecordsRow(SP_GetAllDepositRecordsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -565,7 +565,7 @@ namespace Martinez_Bank.resources.reports {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                WithdrawDataSet ds = new WithdrawDataSet();
+                DepositDataSet ds = new DepositDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -583,7 +583,7 @@ namespace Martinez_Bank.resources.reports {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SP_GetAllWithdrawLogsDataTable";
+                attribute2.FixedValue = "SP_GetAllDepositRecordsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -627,25 +627,25 @@ namespace Martinez_Bank.resources.reports {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SP_GetAllWithdrawLogsRow : global::System.Data.DataRow {
+        public partial class SP_GetAllDepositRecordsRow : global::System.Data.DataRow {
             
-            private SP_GetAllWithdrawLogsDataTable tableSP_GetAllWithdrawLogs;
+            private SP_GetAllDepositRecordsDataTable tableSP_GetAllDepositRecords;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal SP_GetAllWithdrawLogsRow(global::System.Data.DataRowBuilder rb) : 
+            internal SP_GetAllDepositRecordsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSP_GetAllWithdrawLogs = ((SP_GetAllWithdrawLogsDataTable)(this.Table));
+                this.tableSP_GetAllDepositRecords = ((SP_GetAllDepositRecordsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableSP_GetAllWithdrawLogs.IdColumn]));
+                    return ((int)(this[this.tableSP_GetAllDepositRecords.IdColumn]));
                 }
                 set {
-                    this[this.tableSP_GetAllWithdrawLogs.IdColumn] = value;
+                    this[this.tableSP_GetAllDepositRecords.IdColumn] = value;
                 }
             }
             
@@ -653,10 +653,10 @@ namespace Martinez_Bank.resources.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Fullname {
                 get {
-                    return ((string)(this[this.tableSP_GetAllWithdrawLogs.FullnameColumn]));
+                    return ((string)(this[this.tableSP_GetAllDepositRecords.FullnameColumn]));
                 }
                 set {
-                    this[this.tableSP_GetAllWithdrawLogs.FullnameColumn] = value;
+                    this[this.tableSP_GetAllDepositRecords.FullnameColumn] = value;
                 }
             }
             
@@ -664,10 +664,10 @@ namespace Martinez_Bank.resources.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string AccountNumber {
                 get {
-                    return ((string)(this[this.tableSP_GetAllWithdrawLogs.AccountNumberColumn]));
+                    return ((string)(this[this.tableSP_GetAllDepositRecords.AccountNumberColumn]));
                 }
                 set {
-                    this[this.tableSP_GetAllWithdrawLogs.AccountNumberColumn] = value;
+                    this[this.tableSP_GetAllDepositRecords.AccountNumberColumn] = value;
                 }
             }
             
@@ -675,10 +675,10 @@ namespace Martinez_Bank.resources.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public decimal PreviousBalance {
                 get {
-                    return ((decimal)(this[this.tableSP_GetAllWithdrawLogs.PreviousBalanceColumn]));
+                    return ((decimal)(this[this.tableSP_GetAllDepositRecords.PreviousBalanceColumn]));
                 }
                 set {
-                    this[this.tableSP_GetAllWithdrawLogs.PreviousBalanceColumn] = value;
+                    this[this.tableSP_GetAllDepositRecords.PreviousBalanceColumn] = value;
                 }
             }
             
@@ -686,10 +686,10 @@ namespace Martinez_Bank.resources.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public decimal CurrentBalance {
                 get {
-                    return ((decimal)(this[this.tableSP_GetAllWithdrawLogs.CurrentBalanceColumn]));
+                    return ((decimal)(this[this.tableSP_GetAllDepositRecords.CurrentBalanceColumn]));
                 }
                 set {
-                    this[this.tableSP_GetAllWithdrawLogs.CurrentBalanceColumn] = value;
+                    this[this.tableSP_GetAllDepositRecords.CurrentBalanceColumn] = value;
                 }
             }
             
@@ -697,10 +697,10 @@ namespace Martinez_Bank.resources.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime DateUpdate {
                 get {
-                    return ((global::System.DateTime)(this[this.tableSP_GetAllWithdrawLogs.DateUpdateColumn]));
+                    return ((global::System.DateTime)(this[this.tableSP_GetAllDepositRecords.DateUpdateColumn]));
                 }
                 set {
-                    this[this.tableSP_GetAllWithdrawLogs.DateUpdateColumn] = value;
+                    this[this.tableSP_GetAllDepositRecords.DateUpdateColumn] = value;
                 }
             }
             
@@ -708,10 +708,10 @@ namespace Martinez_Bank.resources.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.TimeSpan TimeUpdated {
                 get {
-                    return ((global::System.TimeSpan)(this[this.tableSP_GetAllWithdrawLogs.TimeUpdatedColumn]));
+                    return ((global::System.TimeSpan)(this[this.tableSP_GetAllDepositRecords.TimeUpdatedColumn]));
                 }
                 set {
-                    this[this.tableSP_GetAllWithdrawLogs.TimeUpdatedColumn] = value;
+                    this[this.tableSP_GetAllDepositRecords.TimeUpdatedColumn] = value;
                 }
             }
         }
@@ -720,22 +720,22 @@ namespace Martinez_Bank.resources.reports {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class SP_GetAllWithdrawLogsRowChangeEvent : global::System.EventArgs {
+        public class SP_GetAllDepositRecordsRowChangeEvent : global::System.EventArgs {
             
-            private SP_GetAllWithdrawLogsRow eventRow;
+            private SP_GetAllDepositRecordsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_GetAllWithdrawLogsRowChangeEvent(SP_GetAllWithdrawLogsRow row, global::System.Data.DataRowAction action) {
+            public SP_GetAllDepositRecordsRowChangeEvent(SP_GetAllDepositRecordsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_GetAllWithdrawLogsRow Row {
+            public SP_GetAllDepositRecordsRow Row {
                 get {
                     return this.eventRow;
                 }

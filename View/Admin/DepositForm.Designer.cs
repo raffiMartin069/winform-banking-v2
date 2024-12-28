@@ -44,6 +44,7 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.DepositGridView = new System.Windows.Forms.DataGridView();
+			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.AccountNumberTextBox = new System.Windows.Forms.TextBox();
@@ -173,6 +174,7 @@
 			this.flowLayoutPanel3.Controls.Add(this.label11);
 			this.flowLayoutPanel3.Controls.Add(this.textBox1);
 			this.flowLayoutPanel3.Controls.Add(this.DepositGridView);
+			this.flowLayoutPanel3.Controls.Add(this.linkLabel1);
 			this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 19);
 			this.flowLayoutPanel3.Name = "flowLayoutPanel3";
@@ -238,8 +240,19 @@
 			dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(3);
 			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.DepositGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
-			this.DepositGridView.Size = new System.Drawing.Size(605, 587);
+			this.DepositGridView.Size = new System.Drawing.Size(605, 567);
 			this.DepositGridView.TabIndex = 2;
+			// 
+			// linkLabel1
+			// 
+			this.linkLabel1.AutoSize = true;
+			this.linkLabel1.Location = new System.Drawing.Point(3, 629);
+			this.linkLabel1.Name = "linkLabel1";
+			this.linkLabel1.Size = new System.Drawing.Size(91, 21);
+			this.linkLabel1.TabIndex = 9;
+			this.linkLabel1.TabStop = true;
+			this.linkLabel1.Text = "View report";
+			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
 			// flowLayoutPanel2
 			// 
@@ -466,7 +479,6 @@
 			this.Name = "DepositForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "DepositForm";
-			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.DepositForm_Load);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.flowLayoutPanel4.ResumeLayout(false);
@@ -514,5 +526,6 @@
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.TextBox NameTextBox;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.LinkLabel linkLabel1;
 	}
 }

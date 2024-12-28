@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="WithdrawDataSet" targetNamespace="http://tempuri.org/WithdrawDataSet.xsd" xmlns:mstns="http://tempuri.org/WithdrawDataSet.xsd" xmlns="http://tempuri.org/WithdrawDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="WithdrawReportById" targetNamespace="http://tempuri.org/WithdrawReportById.xsd" xmlns:mstns="http://tempuri.org/WithdrawReportById.xsd" xmlns="http://tempuri.org/WithdrawReportById.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -11,10 +11,10 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="WithdrawDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="WithdrawDataSet" msprop:Generator_DataSetName="WithdrawDataSet">
+  <xs:element name="WithdrawReportById" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="WithdrawReportById" msprop:Generator_DataSetName="WithdrawReportById">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SP_GetAllWithdrawLogs" msprop:Generator_RowEvHandlerName="SP_GetAllWithdrawLogsRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_GetAllWithdrawLogsRowDeleted" msprop:Generator_RowDeletingName="SP_GetAllWithdrawLogsRowDeleting" msprop:Generator_RowEvArgName="SP_GetAllWithdrawLogsRowChangeEvent" msprop:Generator_TablePropName="SP_GetAllWithdrawLogs" msprop:Generator_RowChangedName="SP_GetAllWithdrawLogsRowChanged" msprop:Generator_RowChangingName="SP_GetAllWithdrawLogsRowChanging" msprop:Generator_TableClassName="SP_GetAllWithdrawLogsDataTable" msprop:Generator_RowClassName="SP_GetAllWithdrawLogsRow" msprop:Generator_TableVarName="tableSP_GetAllWithdrawLogs" msprop:Generator_UserTableName="SP_GetAllWithdrawLogs">
+        <xs:element name="SP_WithdrawHistory" msprop:Generator_RowEvHandlerName="SP_WithdrawHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_WithdrawHistoryRowDeleted" msprop:Generator_RowDeletingName="SP_WithdrawHistoryRowDeleting" msprop:Generator_RowEvArgName="SP_WithdrawHistoryRowChangeEvent" msprop:Generator_TablePropName="SP_WithdrawHistory" msprop:Generator_RowChangedName="SP_WithdrawHistoryRowChanged" msprop:Generator_RowChangingName="SP_WithdrawHistoryRowChanging" msprop:Generator_TableClassName="SP_WithdrawHistoryDataTable" msprop:Generator_RowClassName="SP_WithdrawHistoryRow" msprop:Generator_TableVarName="tableSP_WithdrawHistory" msprop:Generator_UserTableName="SP_WithdrawHistory">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -42,7 +42,7 @@
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:SP_GetAllWithdrawLogs" />
+      <xs:selector xpath=".//mstns:SP_WithdrawHistory" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
   </xs:element>

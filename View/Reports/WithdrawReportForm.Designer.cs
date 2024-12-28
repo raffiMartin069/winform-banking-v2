@@ -1,6 +1,6 @@
 ﻿namespace Martinez_Bank.View.Reports
 {
-	partial class DynamicReportForm
+	partial class WithdrawReportForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -33,15 +33,16 @@
 			// 
 			// reportViewer1
 			// 
+			this.reportViewer1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.reportViewer1.DocumentMapWidth = 20;
 			this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+			this.reportViewer1.Margin = new System.Windows.Forms.Padding(0);
 			this.reportViewer1.Name = "reportViewer1";
 			this.reportViewer1.ServerReport.BearerToken = null;
 			this.reportViewer1.Size = new System.Drawing.Size(819, 761);
 			this.reportViewer1.TabIndex = 0;
 			// 
-			// DynamicReportForm
+			// WithdrawReportForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -49,8 +50,9 @@
 			this.Controls.Add(this.reportViewer1);
 			this.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.MaximumSize = new System.Drawing.Size(835, 800);
 			this.MinimumSize = new System.Drawing.Size(835, 800);
-			this.Name = "DynamicReportForm";
+			this.Name = "WithdrawReportForm";
 			this.Text = "DynamicReportForm";
 			this.Load += new System.EventHandler(this.DynamicReportForm_Load);
 			this.ResumeLayout(false);

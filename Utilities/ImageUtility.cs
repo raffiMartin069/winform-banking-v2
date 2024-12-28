@@ -52,6 +52,44 @@ namespace Martinez_Bank.Utilities
 			}
 		}
 
+		public static Bitmap ByteDefaultMdiImageArrayToBitmap(byte[] bytes)
+		{
+			if (bytes == null) throw new ArgumentNullException(nameof(bytes));
+
+			using (var ms = new MemoryStream(bytes))
+			{
+				var image = Image.FromStream(ms);
+
+				// Target size
+				int targetWidth = 100;
+				int targetHeight = 100;
+
+				// Compute aspect ratio
+				float aspectRatio = Math.Min((float)targetWidth / image.Width, (float)targetHeight / image.Height);
+				int newWidth = (int)(image.Width * aspectRatio);
+				int newHeight = (int)(image.Height * aspectRatio);
+
+				// Center the resized image within the target dimensions
+				var resizedBitmap = new Bitmap(targetWidth, targetHeight);
+				using (var g = Graphics.FromImage(resizedBitmap))
+				{
+					g.Clear(Color.Transparent); // Optional: set background color
+					g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+					g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+					g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+					// Calculate position to center the image
+					int offsetX = (targetWidth - newWidth) / 2;
+					int offsetY = (targetHeight - newHeight) / 2;
+
+					g.DrawImage(image, offsetX, offsetY, newWidth, newHeight);
+				}
+
+				return resizedBitmap;
+			}
+		}
+
+
 		public static Image ImageToImageResizer(Image img)
 		{
 			var newImage = new Bitmap(150, 150);

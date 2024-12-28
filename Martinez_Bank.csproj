@@ -84,6 +84,7 @@
   <ItemGroup>
     <Compile Include="Config\ServiceInjection.cs" />
     <Compile Include="Dto\AccountDto.cs" />
+    <Compile Include="Dto\AuthenticationDto.cs" />
     <Compile Include="Dto\CreateAccountDto.cs" />
     <Compile Include="Dto\User.cs" />
     <Compile Include="Dto\WithdrawLogsDto.cs" />
@@ -115,10 +116,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="resources\reports\WithdrawDataSet.Designer.cs">
+    <Compile Include="resources\reports\DepositDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WithdrawDataSet.xsd</DependentUpon>
+      <DependentUpon>DepositDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="resources\reports\DepositHistoryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepositHistoryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="resources\reports\WithdrawReportByIdDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WithdrawReportByIdDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Utilities\CommonIteratorUtility.cs" />
@@ -167,11 +178,23 @@
     <Compile Include="View\Client\DepositForm.Designer.cs">
       <DependentUpon>DepositForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Client\DepositHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Client\DepositHistoryForm.Designer.cs">
+      <DependentUpon>DepositHistoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Client\WithdrawForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Client\WithdrawForm.Designer.cs">
       <DependentUpon>WithdrawForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Client\WithdrawLogsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Client\WithdrawLogsForm.Designer.cs">
+      <DependentUpon>WithdrawLogsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Mdi\AdminMDIParent.cs">
       <SubType>Form</SubType>
@@ -185,11 +208,17 @@
     <Compile Include="View\Mdi\ClientMDIParent.Designer.cs">
       <DependentUpon>ClientMDIParent.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Reports\DynamicReportForm.cs">
+    <Compile Include="View\Reports\DepositReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Reports\DynamicReportForm.Designer.cs">
-      <DependentUpon>DynamicReportForm.cs</DependentUpon>
+    <Compile Include="View\Reports\DepositReportForm.Designer.cs">
+      <DependentUpon>DepositReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\WithdrawReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\WithdrawReportForm.Designer.cs">
+      <DependentUpon>WithdrawReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SignInForm.cs">
       <SubType>Form</SubType>
@@ -199,7 +228,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinForm\Session.cs" />
+    <EmbeddedResource Include="resources\reports\DepositHistory.rdlc" />
+    <EmbeddedResource Include="resources\reports\DepositReport.rdlc" />
     <EmbeddedResource Include="resources\reports\WithdrawalReport.rdlc" />
+    <EmbeddedResource Include="resources\reports\WithdrawHistory.rdlc" />
     <EmbeddedResource Include="View\Admin\CashTransferForm.resx">
       <DependentUpon>CashTransferForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,8 +254,14 @@
     <EmbeddedResource Include="View\Client\DepositForm.resx">
       <DependentUpon>DepositForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Client\DepositHistoryForm.resx">
+      <DependentUpon>DepositHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Client\WithdrawForm.resx">
       <DependentUpon>WithdrawForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Client\WithdrawLogsForm.resx">
+      <DependentUpon>WithdrawLogsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Mdi\AdminMDIParent.resx">
       <DependentUpon>AdminMDIParent.cs</DependentUpon>
@@ -230,8 +269,11 @@
     <EmbeddedResource Include="View\Mdi\ClientMDIParent.resx">
       <DependentUpon>ClientMDIParent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Reports\DynamicReportForm.resx">
-      <DependentUpon>DynamicReportForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\Reports\DepositReportForm.resx">
+      <DependentUpon>DepositReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reports\WithdrawReportForm.resx">
+      <DependentUpon>WithdrawReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
@@ -260,16 +302,38 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="resources\images\Windows Forms.zip" />
-    <None Include="resources\reports\WithdrawDataSet.xsc">
-      <DependentUpon>WithdrawDataSet.xsd</DependentUpon>
+    <None Include="resources\reports\DepositDataSet.xsc">
+      <DependentUpon>DepositDataSet.xsd</DependentUpon>
     </None>
-    <None Include="resources\reports\WithdrawDataSet.xsd">
+    <None Include="resources\reports\DepositDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>WithdrawDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>DepositDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="resources\reports\WithdrawDataSet.xss">
-      <DependentUpon>WithdrawDataSet.xsd</DependentUpon>
+    <None Include="resources\reports\DepositDataSet.xss">
+      <DependentUpon>DepositDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="resources\reports\DepositHistoryDataSet.xsc">
+      <DependentUpon>DepositHistoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="resources\reports\DepositHistoryDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DepositHistoryDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="resources\reports\DepositHistoryDataSet.xss">
+      <DependentUpon>DepositHistoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="resources\reports\WithdrawReportByIdDataSet.xsc">
+      <DependentUpon>WithdrawReportByIdDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="resources\reports\WithdrawReportByIdDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WithdrawReportByIdDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="resources\reports\WithdrawReportByIdDataSet.xss">
+      <DependentUpon>WithdrawReportByIdDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +343,8 @@
     <Folder Include="Presenter\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\icons\icons8-history-50.png" />
+    <None Include="resources\icons\icons8-log-out-48.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
